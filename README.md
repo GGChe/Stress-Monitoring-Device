@@ -8,6 +8,7 @@ Some ideas:
 Use a smartwatch or something that can measure the heartbeat rate from a driver and decide if he is stressed or not. Then, the system can decide how to warn the driver (think about different ways of warning or reduce the stress of the user)
 
 
+Hi!! Change it if u cant write here
 
 
 
