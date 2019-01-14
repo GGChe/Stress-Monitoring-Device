@@ -66,5 +66,9 @@ https://www.sciencedirect.com/topics/neuroscience/electrooculography
 
 THIS is what I told you about Zodial Bands https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=sodial+ECG+
 
+-----------------------------------
+SOME EXTRA INFO
 
+
+https://www.instructables.com/id/Streaming-Data-Visualization-Plotly-Raspberry-Pi/
 
