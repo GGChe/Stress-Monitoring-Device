@@ -40,17 +40,19 @@ Useful link : https://tutorials-raspberrypi.com/raspberry-pi-heartbeat-pulse-mea
 
 Possible other applications >> Use the stress controller for videogames.
 
-ADC CONVERTER 16 BITS I2C
-https://uk.farnell.com/texas-instruments/ads1110a0idbvt/adc-16bit-240sps-i2c-sot23/dp/1206859?st=16%20bits%20acdc%20conversor
+DIGITAL SENSOR 
+http://www.farnell.com/datasheets/72434.pdf?_ga=2.151482681.1270935544.1547632685-1530034672.1547632685&_gac=1.45884176.1547632685.EAIaIQobChMIj7qxgYXy3wIVG8-yCh1WcQHIEAAYASAAEgLLPvD_BwE
+https://uk.farnell.com/broadcom-limited/apds-9300-020/sensor-ambient-light/dp/1634724?st=i2c%20light
+
+SEARCH PAGE FROM FARNELL 
+https://uk.farnell.com/search?st=i2c%20light
 
 IMPORTANT TIPS:
-  We need to find an I2C connection
+  We have a good dynamic range, and two photodiodes, so we can choose which one is better for our application. 
   The PCB must include robust pluggers (sb9, vga, usb... )
-  
 
 -----------------------------------
 SOME EXTRA INFO
-
 
 https://www.instructables.com/id/Streaming-Data-Visualization-Plotly-Raspberry-Pi/
 
