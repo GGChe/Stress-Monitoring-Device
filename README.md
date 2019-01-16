@@ -47,6 +47,8 @@ https://uk.farnell.com/broadcom-limited/apds-9300-020/sensor-ambient-light/dp/16
 SEARCH PAGE FROM FARNELL 
 https://uk.farnell.com/search?st=i2c%20light
 
+IMPORTANT: FIND A MODULE FOR CONNECTING THE SMD CHIP TO THE CIRCUIT
+
 IMPORTANT TIPS:
   We have a good dynamic range, and two photodiodes, so we can choose which one is better for our application. 
   The PCB must include robust pluggers (sb9, vga, usb... )
