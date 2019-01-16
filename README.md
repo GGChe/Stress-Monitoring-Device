@@ -28,46 +28,25 @@ CONS: connection between devide and raspberry PI.
 - Another sensor Example:
 https://www.sunrom.com/p/heart-beat-sensor-digital-pulse-out
 
-
 - When driver grabs the part of wheel, the sensor measures ECG. 
 
 - SODIAL(R) Pulse Sensor is connected with A/D converter and this converter sends digital data to Raspberry Pi. 
 
 Useful link : https://tutorials-raspberrypi.com/raspberry-pi-heartbeat-pulse-measuring/
 
---------------------------------------------------------------------------------------------------------------------------
-2. Diabetes and Driving
+------------------------------------------------
 
-Some hypoglucaemia patients have limitations with driving license. They often are forced to give it up because of a dangerous health state. A possible solution for this problem could be a NON-INVASIVE & REUSABLE system with wireless connection that is able to send the data of blood glucose level (also called blood sugar). It should usually be below 4mmol/l. However, we can implement some restrictions to make the system safer.
+---------16/01/2019----------------------
 
-some info:
-https://www.diabetes.org.uk/guide-to-diabetes/life-with-diabetes/driving
-http://www.gluco-wise.com/
-https://www.semanticscholar.org/paper/Non-Invasive-Glucose-Monitoring-%3A-A-Review-of-and-Lin-Gal/92a479dae8a0aaf97b4a28ad4bf5df5f935c0039
+Possible other applications >> Use the stress controller for videogames.
 
-PROS: Realistic project, Easy control system.
+ADC CONVERTER 16 BITS I2C
+https://uk.farnell.com/texas-instruments/ads1110a0idbvt/adc-16bit-240sps-i2c-sot23/dp/1206859?st=16%20bits%20acdc%20conversor
 
-CONS: Glucose sensor (how to find the correct one, how to supply energy, how to implement a communication between the raspberry and the system), Only can measure transient blood sugar in blood-gathering method, blood-gathering method is uncomfortable, Expesive sensor price
-
---------------------------------------------------------------------------------------------------------------------------
-3. Driver Attention Lose Control
-
-Honda developed a driver attention monitor that, by using the data of how the driver controls the car on the road, deterine if the driver should take a rest or not. Something similar could be done because in the Honda system, the driver could not be tired but the system insists on taking a rest. A more accurate system could be using electrooculography.
-
-PROS: Very realistic and marketable system, Possibility of connecting the system with wireless connection.
-
-CONS: Difficult connection, difficult settings (2 cameras and we have to calibrate and test the system (big problem with testing, this technique is not very accurate). 
-
-http://www.hiltonheadhonda.com/blog/how-does-the-honda-driver-attention-monitor-work/
-https://www.sciencedirect.com/topics/neuroscience/electrooculography
-
- link: https://www.youtube.com/watch?v=oVxRCUhbAMI
- link: https://www.youtube.com/watch?v=bZnJxowfPF8
-       
-
-
-
-THIS is what I told you about Zodial Bands https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=sodial+ECG+
+IMPORTANT TIPS:
+  We need to find an I2C connection
+  The PCB must include robust pluggers (sb9, vga, usb... )
+  
 
 -----------------------------------
 SOME EXTRA INFO
