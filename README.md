@@ -25,6 +25,9 @@ CONS: connection between devide and raspberry PI.
 
 ![asdfsadfds](https://user-images.githubusercontent.com/46483800/51086779-b1379100-1742-11e9-9c3c-06a60248d4dc.JPG)
 
+- Another sensor Example:
+https://www.sunrom.com/p/heart-beat-sensor-digital-pulse-out
+
 
 - When driver grabs the part of wheel, the sensor measures ECG. 
 
