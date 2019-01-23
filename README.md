@@ -45,8 +45,8 @@ https://uk.farnell.com/vishay/veml6030/ambient-light-sensor-i2c-3-6v/dp/2627811?
 http://www.farnell.com/datasheets/2118174.pdf?_ga=2.1731121.1843407088.1548266342-580260394.1548266342
 
 LEVEL SHIFTER 
-https://uk.farnell.com/on-semiconductor/nlsx4373dr2g/level-translator-2i-p-soic-8/dp/2464613
-http://www.farnell.com/datasheets/1842035.pdf?_ga=2.31015487.1843407088.1548266342-580260394.1548266342
+https://uk.farnell.com/texas-instruments/txb0104pwr/ic-sm-logic-translator/dp/1607891
+http://www.ti.com/lit/ds/symlink/txb0104.pdf
 
 SEARCH PAGE FROM FARNELL 
 https://uk.farnell.com/search?st=i2c%20light
