@@ -41,8 +41,12 @@ Useful link : https://tutorials-raspberrypi.com/raspberry-pi-heartbeat-pulse-mea
 Possible other applications >> Use the stress controller for videogames.
 
 DIGITAL SENSOR 
-http://www.farnell.com/datasheets/72434.pdf?_ga=2.151482681.1270935544.1547632685-1530034672.1547632685&_gac=1.45884176.1547632685.EAIaIQobChMIj7qxgYXy3wIVG8-yCh1WcQHIEAAYASAAEgLLPvD_BwE
-https://uk.farnell.com/broadcom-limited/apds-9300-020/sensor-ambient-light/dp/1634724?st=i2c%20light
+https://uk.farnell.com/vishay/veml6030/ambient-light-sensor-i2c-3-6v/dp/2627811?st=i2c%20light
+http://www.farnell.com/datasheets/2118174.pdf?_ga=2.1731121.1843407088.1548266342-580260394.1548266342
+
+LEVEL SHIFTER 
+https://uk.farnell.com/on-semiconductor/nlsx4373dr2g/level-translator-2i-p-soic-8/dp/2464613
+http://www.farnell.com/datasheets/1842035.pdf?_ga=2.31015487.1843407088.1548266342-580260394.1548266342
 
 SEARCH PAGE FROM FARNELL 
 https://uk.farnell.com/search?st=i2c%20light
