@@ -64,6 +64,6 @@ https://www.instructables.com/id/Streaming-Data-Visualization-Plotly-Raspberry-P
 
 Useful link for using I2C and SPI in Pi
 
-https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial/all
+https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial/all   
 http://hertaville.com/introduction-to-accessing-the-raspberry-pis-gpio-in-c.html
 
