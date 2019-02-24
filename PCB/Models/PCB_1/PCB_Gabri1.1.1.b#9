@@ -73,10 +73,16 @@
 </layers>
 <board>
 <plain>
-<wire x1="60" y1="60" x2="95" y2="60" width="0" layer="20"/>
-<wire x1="95" y1="60" x2="95" y2="82" width="0" layer="20"/>
-<wire x1="95" y1="82" x2="60" y2="82" width="0" layer="20"/>
-<wire x1="60" y1="82" x2="60" y2="60" width="0" layer="20"/>
+<wire x1="59.95" y1="59.65" x2="94.9" y2="59.7" width="0" layer="20"/>
+<wire x1="94.9" y1="59.7" x2="94.85" y2="82" width="0" layer="20"/>
+<wire x1="94.85" y1="82" x2="60" y2="82" width="0" layer="20"/>
+<wire x1="60" y1="82" x2="59.95" y2="59.65" width="0" layer="20"/>
+<dimension x1="100" y1="82" x2="60" y2="82" x3="80" y3="84.6" textsize="1.778" layer="16" dtype="horizontal"/>
+<dimension x1="60" y1="82" x2="60" y2="60" x3="57.2" y3="71" textsize="1.778" layer="16" dtype="horizontal"/>
+<dimension x1="60" y1="82" x2="100" y2="82" x3="80" y3="84.1" textsize="1.778" layer="1"/>
+<dimension x1="100" y1="82" x2="100" y2="60" x3="104.1" y3="71" textsize="1.778" layer="1"/>
+<dimension x1="59.95" y1="59.65" x2="94.9" y2="59.7" x3="77.431678125" y3="55.005409375" textsize="1.778" layer="1"/>
+<dimension x1="60" y1="82" x2="59.95" y2="59.65" x3="54.90421875" y3="70.83634375" textsize="1.778" layer="1"/>
 </plain>
 <libraries>
 <library name="resistor">
