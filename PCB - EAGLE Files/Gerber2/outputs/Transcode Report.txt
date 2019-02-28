@@ -1,0 +1,58 @@
+
+
+   ---- Transcoding 'C:\Users\Mufasa\Documents\Projects\RealTimeProject\PCB - EAGLE Files\Gerber2\outputs\PCB_Gabri1.1.1.plc' ----   Wed Feb 27 21:18:34 2019
+
+D10   --> D100
+D11   --> D101
+D12   --> D102
+D13   --> D103
+D14   --> D104
+D15   --> D105
+D16   --> D106
+D17   --> D107
+D18   --> D108
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'C:\Users\Mufasa\Documents\Projects\RealTimeProject\PCB - EAGLE Files\Gerber2\outputs\PCB_Gabri1.1.1.sol' ----   Wed Feb 27 21:18:34 2019
+
+D11   --> D109
+D12   --> D110
+D13   --> D111
+D14   --> D112
+D15   --> D113
+D16   --> D114
+D17   --> D115
+D18   --> D116
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'C:\Users\Mufasa\Documents\Projects\RealTimeProject\PCB - EAGLE Files\Gerber2\outputs\PCB_Gabri1.1.1.stc' ----   Wed Feb 27 21:18:34 2019
+
+D10   --> D117
+D11   --> D118
+D12   --> D119
+D13   --> D120
+D14   --> D121
+D15   --> D122
+D16   --> D123
+D17   --> D124
+D18   --> D125
+D19   --> D126
+D20   --> D127
+D21   --> D128
+D22   --> D129
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'C:\Users\Mufasa\Documents\Projects\RealTimeProject\PCB - EAGLE Files\Gerber2\outputs\PCB_Gabri1.1.1.sts' ----   Wed Feb 27 21:18:34 2019
+
+D10   --> D130
+D11   --> D131
+D12   --> D132
+D13   --> D133
+D14   --> D134
+D15   --> D135
+D16   --> D136
+D17   --> D137
+-----------------------------------------------------------------
