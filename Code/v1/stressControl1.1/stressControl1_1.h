@@ -1,6 +1,6 @@
 #pragma once
-#ifndef "stressControl1_1.h"
-#define "stressControl1_1.h"
+#ifndef <stressControl1_1_h>
+#define <stressControl1_1_h>
 
 #include <iostream>
 using namespace std;

@@ -20,7 +20,9 @@ int main()
 	// read two bytes
 	read(file, buf, 2);
 	// write one byte
-	write(file, buf, 1);	return 0;
+	write(file, buf, 1);
+	return 0;
+
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
