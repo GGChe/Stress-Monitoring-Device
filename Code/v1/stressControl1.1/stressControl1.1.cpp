@@ -4,11 +4,12 @@
 #include <linux/i2c-dev.h>
 #include <stdio.h>
 #include <iostream>
+#include "stressControl1.1.h"
 using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	std::cout << "Hello World!\n";
 	// data buffer
 	char buf[2];
 	// open the I2C device (check with "ls -l/ dev/i2c*")
@@ -17,9 +18,9 @@ int main()
 	int addr = 0x58;
 	ioctl(file, I2C_SLAVE, addr);
 	// read two bytes
-	read(file, buf, 2)
+	read(file, buf, 2);
 	// write one byte
-	write(file, buf, 1)
+	write(file, buf, 1);	return 0;
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
