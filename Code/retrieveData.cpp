@@ -12,6 +12,7 @@ mySensor.PowerOn();
 	int lux = 0;
 	lux = mySensor.GetLux();
 	cout << "requestData/t"<< lux << endl;
+	return 0;
 }
 
 void retrieveData::initSensor() {
