@@ -19,7 +19,7 @@ int main()
 	ioctl(file, I2C_SLAVE, addr);
 	// read two bytes
 	read(file, buf, 2);
-	cout << buf << endl;
+	cout << buf << ¨skjhd¨ << endl;
 	// write one byte
 	write(file, buf, 1);
 	return 0;
