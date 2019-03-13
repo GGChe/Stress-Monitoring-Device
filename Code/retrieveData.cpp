@@ -2,10 +2,10 @@
 using namespace std;
 #include "retrieveData.h"
 #include "VEML6030.h"
-
+VEML6030 mySensor;
 
 void retrieveData::initSensor() {
-	VEML6030 mySensor;
+	
 	mySensor.PowerOn();
 	cout << "initSensor" << endl;
 	int lux = 0;
