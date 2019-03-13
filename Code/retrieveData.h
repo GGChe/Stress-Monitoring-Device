@@ -1,30 +1,18 @@
+#ifndef retrieveData_h
+#define retrieveData_h
+
+
 #include <iostream>
+#include <VEML6030_h>
+
 using namespace std;
 
-class lightSensor {
-
+class retrieveData {
 public:
   void initSensor();
   void requestData();
+  int lux;
 private:
   void filterData();
 };
 
-void lightSensor::initSensor(){
-
-  cout<<"initSensor"<<endl;
-
-}
-
-void lightSensor::requestData(){
-
-  cout<<"requestData"<<endl;
-  filterData();
-
-}
-
-void lightSensor::filterData(){
-
-  cout<<"filterData"<<endl;
-
-}
