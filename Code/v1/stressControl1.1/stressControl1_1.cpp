@@ -4,7 +4,7 @@
 #include <linux/i2c-dev.h>
 #include <stdio.h>
 #include <iostream>
-#include "stressControl1.1.h"
+#include "stressControl1_1.h"
 using namespace std;
 
 int main()
