@@ -72,7 +72,5 @@ class VEML6030 {
       unsigned int IntTime = 0; //Global integration time
       float GainVals[4] = {1, 2, 0.125, 0.25}; //Used to go from bit field to arbitrary gain value
       uint8_t GainValBits[4] = {0b10, 0b11, 0b00, 0b01}; //Bit values for gains, 1/8x, 1/4x, 1x, 2x
-
-
 };
 #endif
