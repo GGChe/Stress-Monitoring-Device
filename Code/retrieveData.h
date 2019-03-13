@@ -15,4 +15,6 @@ public:
 private:
   void filterData();
 };
+#endif
+
 
