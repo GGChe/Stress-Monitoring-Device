@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-void main() {
+int main() {
 VEML6030 mySensor;
 mySensor.PowerOn();
 	cout << "initSensor" << endl;
