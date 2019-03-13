@@ -1,20 +1,22 @@
 #include <iostream>
-#include <lightSensor_h>
+#include <retrieveData_h>
+#include <VEML6030_h>
 
-void lightSensor::initSensor() {
-	lightSensor mySensor;
+
+void retrieveData::initSensor() {
+	VEML6030 mySensor;
 	mySensor.PowerOn();
 	cout << "initSensor" << endl;
 	int lux = 0;
 }
 
-void lightSensor::requestData() {
+void retrieveData::requestData() {
 	lux = mySensor.GetLux();
 	cout << "requestData/t"<< lux << endl;
 
 }
 
-void lightSensor::filterData() {
+void retrieveData::filterData() {
 
 	cout << "filterData" << endl;
 
