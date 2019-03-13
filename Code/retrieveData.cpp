@@ -7,8 +7,6 @@ using namespace std;
 
 int main() {
 VEML6030 mySensor;
-mySensor.PowerOn();
-	cout << "initSensor" << endl;
 	int lux = 0;
 	lux = mySensor.GetLux();
 	cout << "requestData/t"<< lux << endl;
