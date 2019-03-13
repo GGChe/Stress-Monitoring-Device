@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 #include ¨retrieveData¨
 #include ¨VEML6030.h¨
 
