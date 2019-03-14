@@ -19,7 +19,8 @@ int main()
 	ioctl(file, I2C_SLAVE, addr);
 	// read two bytes
 	read(file, buf, 2);
-	cout << buf << "skjh" << endl;
+	cout << (int)buf << "skjh" << endl;
+	std::cout << "Hello World!\n";
 	// write one byte
 	write(file, buf, 1);
 	return 0;
