@@ -467,21 +467,21 @@ design rules under a new name.</description>
 <attribute name="OC_FARNELL" value="unknown" x="26.84" y="26.83" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="26.84" y="26.83" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U1" library="VEML6030-GS15" package="VISHAY_VEML6030_2X2X0.87" value="VEML6030-GS15" x="17.4" y="14.5">
-<attribute name="AVAILABILITY" value="Unavailable" x="17.4" y="14.5" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" High Accuracy Ambient Light Sensor With I2c Interface " x="17.4" y="14.5" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="Vishay Semiconductor" x="17.4" y="14.5" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="VEML6030-GS15" x="17.4" y="14.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SMD-6 Vishay Semiconductor" x="17.4" y="14.5" size="1.778" layer="27" display="off"/>
-<attribute name="PRICE" value="None" x="17.4" y="14.5" size="1.778" layer="27" display="off"/>
+<element name="U1" library="VEML6030-GS15" package="VISHAY_VEML6030_2X2X0.87" value="VEML6030-GS15" x="17.4" y="14.7" rot="R180">
+<attribute name="AVAILABILITY" value="Unavailable" x="17.4" y="14.7" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" High Accuracy Ambient Light Sensor With I2c Interface " x="17.4" y="14.7" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="Vishay Semiconductor" x="17.4" y="14.7" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="VEML6030-GS15" x="17.4" y="14.7" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PACKAGE" value="SMD-6 Vishay Semiconductor" x="17.4" y="14.7" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PRICE" value="None" x="17.4" y="14.7" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="D1" library="SML-LX0805SIC-TR" package="LEDC2012X120N" value="SML-LX0805SIC-TR" x="17.6" y="11.1">
-<attribute name="AVAILABILITY" value="Unavailable" x="17.6" y="11.1" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" Super Red 2 x 1.25 mm 0805 140° Water Clear 60 mcd 2 V PCB Surface Mount LED " x="17.6" y="11.1" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="Lumex Opto/Components" x="17.6" y="11.1" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="SML-LX0805SIC-TR" x="17.6" y="11.1" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="0805 Lumex" x="17.6" y="11.1" size="1.778" layer="27" display="off"/>
-<attribute name="PRICE" value="None" x="17.6" y="11.1" size="1.778" layer="27" display="off"/>
+<element name="D1" library="SML-LX0805SIC-TR" package="LEDC2012X120N" value="SML-LX0805SIC-TR" x="17.4" y="10.9" rot="R180">
+<attribute name="AVAILABILITY" value="Unavailable" x="17.4" y="10.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" Super Red 2 x 1.25 mm 0805 140° Water Clear 60 mcd 2 V PCB Surface Mount LED " x="17.4" y="10.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="Lumex Opto/Components" x="17.4" y="10.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="SML-LX0805SIC-TR" x="17.4" y="10.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PACKAGE" value="0805 Lumex" x="17.4" y="10.9" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PRICE" value="None" x="17.4" y="10.9" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 </elements>
 <signals>
@@ -489,20 +489,15 @@ design rules under a new name.</description>
 <contactref element="SV1" pad="2"/>
 <contactref element="U1" pad="6"/>
 <contactref element="D1" pad="A"/>
-<wire x1="18.7528" y1="10.655" x2="18.7528" y2="11.0812" width="0.1524" layer="1"/>
-<wire x1="19.179" y1="10.2288" x2="18.7528" y2="10.655" width="0.1524" layer="1"/>
-<wire x1="19.179" y1="9.8026" x2="19.179" y2="10.2288" width="0.1524" layer="1"/>
-<wire x1="17.9004" y1="8.524" x2="19.179" y2="9.8026" width="0.1524" layer="1"/>
-<wire x1="15.7694" y1="8.524" x2="17.9004" y2="8.524" width="0.1524" layer="1"/>
-<wire x1="12.786" y1="11.5074" x2="15.7694" y2="8.524" width="0.1524" layer="1"/>
-<wire x1="12.786" y1="14.0646" x2="12.786" y2="11.5074" width="0.1524" layer="1"/>
-<wire x1="3.8358" y1="23.0148" x2="12.786" y2="14.0646" width="0.1524" layer="1"/>
-<wire x1="3.8358" y1="23.441" x2="3.8358" y2="23.0148" width="0.1524" layer="1"/>
-<wire x1="2.5572" y1="24.7196" x2="3.8358" y2="23.441" width="0.1524" layer="1"/>
+<wire x1="15.3432" y1="12.786" x2="16.6218" y2="14.0646" width="0.1524" layer="1"/>
+<wire x1="15.3432" y1="12.3598" x2="15.3432" y2="12.786" width="0.1524" layer="1"/>
+<wire x1="16.6218" y1="11.0812" x2="15.3432" y2="12.3598" width="0.1524" layer="1"/>
+<wire x1="16.6218" y1="14.0646" x2="16.525" y2="14.05" width="0.1524" layer="1"/>
+<wire x1="16.6218" y1="11.0812" x2="16.5" y2="10.9" width="0.1524" layer="1"/>
+<wire x1="14.4908" y1="12.786" x2="15.3432" y2="12.786" width="0.1524" layer="1"/>
+<wire x1="2.5572" y1="24.7196" x2="14.4908" y2="12.786" width="0.1524" layer="1"/>
 <wire x1="2.5572" y1="25.1458" x2="2.5572" y2="24.7196" width="0.1524" layer="1"/>
-<wire x1="18.7528" y1="11.0812" x2="18.5" y2="11.1" width="0.1524" layer="1"/>
 <wire x1="2.5572" y1="25.1458" x2="2.71" y2="25.56" width="0.1524" layer="1"/>
-<wire x1="18.5" y1="11.1" x2="18.275" y2="15.15" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="SV1" pad="39"/>
@@ -522,42 +517,41 @@ design rules under a new name.</description>
 <via x="19" y="5.6" extent="1-16" drill="0.8"/>
 <contactref element="U1" pad="1"/>
 <contactref element="D1" pad="C"/>
-<wire x1="16.7" y1="11.1" x2="16.525" y2="15.15" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="SV1" pad="3"/>
 <contactref element="U1" pad="2"/>
-<wire x1="16.1956" y1="14.4908" x2="16.6218" y2="14.4908" width="0.1524" layer="1"/>
-<wire x1="14.917" y1="13.2122" x2="16.1956" y2="14.4908" width="0.1524" layer="1"/>
-<wire x1="6.8192" y1="21.31" x2="14.917" y2="13.2122" width="0.1524" layer="1"/>
-<wire x1="6.8192" y1="25.572" x2="6.8192" y2="21.31" width="0.1524" layer="1"/>
-<wire x1="5.1144" y1="27.2768" x2="6.8192" y2="25.572" width="0.1524" layer="1"/>
-<wire x1="5.1144" y1="27.703" x2="5.1144" y2="27.2768" width="0.1524" layer="1"/>
-<wire x1="16.6218" y1="14.4908" x2="16.525" y2="14.5" width="0.1524" layer="1"/>
-<wire x1="5.1144" y1="27.703" x2="5.25" y2="28.1" width="0.1524" layer="1"/>
+<wire x1="18.275" y1="14.7" x2="5.25" y2="28.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="SV1" pad="5"/>
 <contactref element="U1" pad="3"/>
-<wire x1="16.525" y1="13.85" x2="7.79" y2="28.1" width="0" layer="19" extent="1-1"/>
+<wire x1="19.179" y1="16.1956" x2="18.3266" y2="15.3432" width="0.1524" layer="1"/>
+<wire x1="18.3266" y1="16.1956" x2="19.179" y2="16.1956" width="0.1524" layer="16"/>
+<wire x1="9.3764" y1="25.1458" x2="18.3266" y2="16.1956" width="0.1524" layer="16"/>
+<wire x1="9.3764" y1="25.572" x2="9.3764" y2="25.1458" width="0.1524" layer="16"/>
+<wire x1="7.6716" y1="27.2768" x2="9.3764" y2="25.572" width="0.1524" layer="16"/>
+<wire x1="7.6716" y1="27.703" x2="7.6716" y2="27.2768" width="0.1524" layer="16"/>
+<wire x1="18.3266" y1="15.3432" x2="18.275" y2="15.35" width="0.1524" layer="1"/>
+<wire x1="7.6716" y1="27.703" x2="7.79" y2="28.1" width="0.1524" layer="16"/>
+<via x="19.179" y="16.1956" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="N$4">
 <contactref element="U1" pad="5"/>
 <contactref element="SV1" pad="9"/>
-<wire x1="19.6052" y1="14.4908" x2="18.3266" y2="14.4908" width="0.1524" layer="1"/>
-<wire x1="20.0314" y1="14.917" x2="19.6052" y2="14.4908" width="0.1524" layer="1"/>
-<wire x1="20.0314" y1="19.6052" x2="20.0314" y2="14.917" width="0.1524" layer="1"/>
-<wire x1="14.0646" y1="25.572" x2="20.0314" y2="19.6052" width="0.1524" layer="1"/>
-<wire x1="14.0646" y1="25.9982" x2="14.0646" y2="25.572" width="0.1524" layer="1"/>
-<wire x1="12.786" y1="27.2768" x2="14.0646" y2="25.9982" width="0.1524" layer="1"/>
-<wire x1="12.786" y1="27.703" x2="12.786" y2="27.2768" width="0.1524" layer="1"/>
-<wire x1="18.3266" y1="14.4908" x2="18.275" y2="14.5" width="0.1524" layer="1"/>
-<wire x1="12.786" y1="27.703" x2="12.87" y2="28.1" width="0.1524" layer="1"/>
+<wire x1="16.525" y1="14.7" x2="12.87" y2="28.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="U1" pad="4"/>
 <contactref element="SV1" pad="7"/>
-<wire x1="18.275" y1="13.85" x2="10.33" y2="28.1" width="0" layer="19" extent="1-1"/>
+<wire x1="13.6384" y1="18.3266" x2="16.6218" y2="15.3432" width="0.1524" layer="1"/>
+<wire x1="13.6384" y1="23.441" x2="13.6384" y2="18.3266" width="0.1524" layer="1"/>
+<wire x1="11.5074" y1="25.572" x2="13.6384" y2="23.441" width="0.1524" layer="1"/>
+<wire x1="11.5074" y1="25.9982" x2="11.5074" y2="25.572" width="0.1524" layer="1"/>
+<wire x1="10.2288" y1="27.2768" x2="11.5074" y2="25.9982" width="0.1524" layer="1"/>
+<wire x1="10.2288" y1="27.703" x2="10.2288" y2="27.2768" width="0.1524" layer="1"/>
+<wire x1="16.6218" y1="15.3432" x2="16.525" y2="15.35" width="0.1524" layer="1"/>
+<wire x1="10.2288" y1="27.703" x2="10.33" y2="28.1" width="0.1524" layer="1"/>
 </signal>
 </signals>
 </board>
