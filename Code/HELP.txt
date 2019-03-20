@@ -1,3 +1,0 @@
-Usse this code to have more info of activating pins in RPI
-
-https://elinux.org/RPi_GPIO_Code_Samples
