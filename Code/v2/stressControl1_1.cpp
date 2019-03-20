@@ -24,6 +24,7 @@ int main()
 	std::cout << "Hello World!\n";
 	// write one byte
 	write(file, buf, 1);
+	gpio_get_value(27,1)
 	return 0;
 
 }
