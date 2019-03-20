@@ -4,6 +4,7 @@
 #include <linux/i2c-dev.h>
 #include <stdio.h>
 #include <iostream>
+#include <gpio-sysfs.h>
 #include "stressControl1_1.h"
 using namespace std;
 
