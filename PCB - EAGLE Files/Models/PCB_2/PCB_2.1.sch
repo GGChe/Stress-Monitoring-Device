@@ -4254,7 +4254,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="R3" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="A1" class="0">
 <segment>
 <pinref part="U3" gate="A" pin="A1"/>
 <wire x1="60.96" y1="73.66" x2="81.28" y2="73.66" width="0.1524" layer="91"/>
@@ -4263,7 +4263,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="81.28" y1="71.12" x2="86.36" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="A2" class="0">
 <segment>
 <pinref part="U3" gate="A" pin="A2"/>
 <wire x1="60.96" y1="71.12" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
