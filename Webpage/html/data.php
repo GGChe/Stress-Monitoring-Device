@@ -56,9 +56,9 @@
   unlink('/home/user/Project/data.txt') or die("Couldn't delete file");
   $fp = fopen('/home/user/Project/data.txt', 'a');
   
-  fwrite($fp, $name. " ");
-  fwrite($fp, $age. " ");
-  fwrite($fp, $height. " ");
+  fwrite($fp, $name. "; ");
+  fwrite($fp, $age. "; ");
+  fwrite($fp, $height. "; ");
   fwrite($fp, $weight. " " . "\r\n");
   fclose($fp);
   
