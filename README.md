@@ -1,5 +1,5 @@
 ![StressFree.org Banner](https://github.com/GGChe/Stress_Controller_Device/blob/master/User%20Manual%20%26%20Support%20Documents/Some%20pictures/Banner.png)
-[![Github Quickguide](http://rogerdudler.github.io/git-guide/)
+[![Github Quickguide](https://github.com/GGChe/Stress_Controller_Device/blob/master/User%20Manual%20%26%20Support%20Documents/Some%20pictures/Button.png)](http://rogerdudler.github.io/git-guide/)
 [![Pull Requests Welcome](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github) 
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp[)
