@@ -1,4 +1,4 @@
-![StressFree.org Banner](https://gla-my.sharepoint.com/personal/2413232c_student_gla_ac_uk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F2413232c%5Fstudent%5Fgla%5Fac%5Fuk%2FDocuments%2Fbanner%2Epng&parent=%2Fpersonal%2F2413232c%5Fstudent%5Fgla%5Fac%5Fuk%2FDocuments)
+![StressFree.org Banner](https://imgur.com/a/9H5kqPP?)
 [![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
