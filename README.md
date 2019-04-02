@@ -1,5 +1,5 @@
 ![StressFree.org Banner](https://github.com/GGChe/Stress_Controller_Device/blob/master/User%20Manual%20%26%20Support%20Documents/Some%20pictures/Banner.png)
-[![Github Quickguide](https://github.com/GGChe/Stress_Controller_Device/blob/master/User%20Manual%20%26%20Support%20Documents/Some%20pictures/Button.png)](http://rogerdudler.github.io/git-guide/)
+[![Github Quickguide](https://travis-ci.com/GGChe/Stress_Controller_Device.svg?branch=master)](http://rogerdudler.github.io/git-guide/)
 [![Pull Requests Welcome](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github) 
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp[)
@@ -8,9 +8,8 @@
 
 ## Welcome to freeCodeCamp.org's open source codebase and curriculum!
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
-
-Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our tream provides an open-source project based on the development of a real time biomedical device which aim is to monitor the stress level of a videogame player. This project is open source and anyone is invited to contribute freely sharing all your 
+tips and modifications
 
 ## Table of Contents
 
