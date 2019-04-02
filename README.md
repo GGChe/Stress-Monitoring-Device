@@ -3,10 +3,9 @@
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/ggche/stress_controller_device/badges/users.svg)](https://www.codetriage.com/ggche/stress_controller_device)
 
-## Welcome to freeCodeCamp.org's open source codebase and curriculum!
+## Welcome to FreeStressGame's open source Project!
 
-Our tream provides an open-source project based on the development of a real time biomedical device which aim is to monitor the stress level of a videogame player. This project is open source and anyone is invited to contribute freely sharing all your 
-tips and modifications
+Our tream provides an open-source real time embedded project based on the development of a real time biomedical device which aim is to monitor the stress level of a videogame player. This project is open source and anyone is invited to contribute freely sharing all your tips and modifications
 
 ## Table of Contents
 
@@ -18,17 +17,16 @@ tips and modifications
 * [License](#license)
 
 
-### Certifications
+### Introduction
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
+According to the World Health Organisation, mental disorders are a main topic in global health, specially because one in four people in the world will be affected by mental or neurological disorders at some point in their lives. It is estimated that more that 450 million people are currently suffering from such disorders, placing this risk to the top of all the ill-health's causes and disability worldwide. The main mental disorder is depression, and in many situations it is caused by stress. Nowadays, stress is a risk that every person need to face in some point of the day, like work, house, friends, etc. 
 
-You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
+There is evidence available that supports the fact that the stress is one of the main triggers of depression. More in detail , such evidence shows that depression can stem from chronic overstimulation of the body's hypothalamic-pituitary-adrenal axis, which produces cortisol in humans. However, while adults can face the stress with therapy and different skills, children are a very enthreaten sector of the population that does not own skills against that. 
 
-Once you’ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or résumé. And when your prospective employers or freelance clients click that link, they’ll see a verified certification specific to you.
+With the mentioned before, we can imagine that one of the most risky situations for a child are videogames where we set an unprepared person against a stressfull and addictive situation, causing severe damage on the child. 
 
-The one exception to this is in the event that we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+Then, this project constitutes a reliable and attractive solution for parents, therapists and adults that want to monitor and control the stress status of the player.
 
 Here are our six core certifications:
 
