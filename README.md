@@ -43,7 +43,7 @@ To deploy and starts working with this device, we need to follow some steps.
 
 ### Found a bug?
 
-If you think you've found a bug, first read the [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+If you think you've found a bug and  you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the sbug.
 
 
 ### Contributing
@@ -52,9 +52,4 @@ If you think you've found a bug, first read the [Help I've Found a Bug](https://
 
 ### License
 
-Copyright © 2019 freeCodeCamp.org
 
-The content of this repository is bound by the following licenses:
-
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) and [`/guide`](/guide) directories including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.
