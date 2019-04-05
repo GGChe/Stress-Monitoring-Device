@@ -35,6 +35,7 @@ The device consists of the next components:
   * 2 X 2Kohm SMD resistors
 - Wrist sensor:
   * VEML6030 Light sensor 
+  * LED
   * 1 X 1 Kohm SMD resistor 
   * 1 X 10 Kohm SMD resistor
   * 1 X 1000 nF SMD capasitor 
@@ -51,9 +52,11 @@ All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in 'd
 To deploy and starts working with this device, we need to follow some steps. 
 
 [Hardware setting] 
-1. 
+
+![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
 
 [Software setting] 
+*
 
 #### 2. Make a Profile 
 
