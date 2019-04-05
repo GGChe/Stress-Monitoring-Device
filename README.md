@@ -74,6 +74,7 @@ To deploy and starts working with this device, we need to follow some steps.
 
 #### [Software setting] 
 
+![2342353](https://user-images.githubusercontent.com/46483800/55652907-cb828780-57e4-11e9-9571-8c4e7ec287e8.JPG)
 
 #### 2. Make a Profile 
 
