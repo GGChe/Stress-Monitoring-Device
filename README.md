@@ -10,8 +10,8 @@ Our tream provides an open-source real time embedded project based on the develo
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [Required Components](#required Components)
-* [System Manual](#system Manual)
+* [Required Components](#required-components)
+* [System Manual](#system-manual)
 * [Found a Bug](#found-a-bug)
 * [Contributing](#contributing)
 * [License](#license)
