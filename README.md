@@ -36,7 +36,10 @@ The device consists of the next components:
 #### 1. First step. Installation
 
 To deploy and starts working with this device, we need to follow some steps. 
+[Hardware] 
 
+
+[Software] 
 
 #### 2. Second step. Make a profile 
 
