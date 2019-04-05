@@ -51,7 +51,7 @@ All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UP
 
 To deploy and starts working with this device, we need to follow some steps. 
 
-####[Hardware setting] 
+#### [Hardware setting] 
 
 ![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
 ![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
@@ -72,7 +72,7 @@ To deploy and starts working with this device, we need to follow some steps.
 | Positive (+) |     11 (GPIO 17)|
 | Negative (-) |     14 (GND) |
 
-####[Software setting] 
+#### [Software setting] 
 
 
 #### 2. Make a Profile 
