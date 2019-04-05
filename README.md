@@ -13,7 +13,6 @@ Our tream provides an open-source real time embedded project based on the develo
 * [Required Components](#Required Components)
 * [System Manual](#System Manual)
 * [Found a Bug](#found-a-bug)
-* [Found a Security Issue](#found-a-security-issue)
 * [Contributing](#contributing)
 * [License](#license)
 
