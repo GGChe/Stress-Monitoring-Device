@@ -9,9 +9,9 @@ Our tream provides an open-source real time embedded project based on the develo
 
 ## Table of Contents
 
-* [Introduction](#Introduction)
-* [Required Components](#Required Components)
-* [System Manual](#System Manual)
+* [Introduction](#introduction)
+* [Required Components](#required Components)
+* [System Manual](#system Manual)
 * [Found a Bug](#found-a-bug)
 * [Contributing](#contributing)
 * [License](#license)
@@ -44,18 +44,18 @@ The device consists of the next components:
 - Band type case for Wrist sensor
 - Raspberry Pi case 
 
-All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in 'doc'. 
+All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UPLOADED DOCUMENTS. 
 
 ### System Manual 
 #### 1. Installation
 
 To deploy and starts working with this device, we need to follow some steps. 
 
-[Hardware setting] 
+####[Hardware setting] 
 
 ![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
 ![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
-* Connect PCB adaptor with Wrist sensor by using RJ45 cable
+* Connect PCB adaptor with Wrist sensor by RJ45 cable
 * Connect PCB adaptor pins with Raspberry Pi pins as shown in below table 
 
 |PCB adaptor | Raspberry Pi| 
@@ -72,7 +72,7 @@ To deploy and starts working with this device, we need to follow some steps.
 | Positive (+) |     11 (GPIO 17)|
 | Negative (-) |     14 (GND) |
 
-[Software setting] 
+####[Software setting] 
 
 
 #### 2. Make a Profile 
