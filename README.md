@@ -38,6 +38,12 @@ The device consists of the next components:
 To deploy and starts working with this device, we need to follow some steps. 
 
 
+#### 2. Second step. Make a profile 
+
+
+
+#### 3. Third step. Use case 
+
 
 
 
