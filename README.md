@@ -43,7 +43,7 @@ The device consists of the next components:
 - Band type case for Wrist sensor
 - Raspberry Pi case 
 
-
+All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in 'doc'. 
 
 ### System Manual 
 #### 1. Installation
