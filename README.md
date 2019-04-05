@@ -9,9 +9,9 @@ Our tream provides an open-source real time embedded project based on the develo
 
 ## Table of Contents
 
-* [Introduction](#Introduction)
-* [Required Components](#Required Components)
-* [System Manual](#System Manual)
+* [Introduction](#introduction)
+* [Required Components](#required-components)
+* [System Manual](#system-manual)
 * [Found a Bug](#found-a-bug)
 * [Contributing](#contributing)
 * [License](#license)
@@ -35,6 +35,7 @@ The device consists of the next components:
   * 2 X 2Kohm SMD resistors
 - Wrist sensor:
   * VEML6030 Light sensor 
+  * LED
   * 1 X 1 Kohm SMD resistor 
   * 1 X 10 Kohm SMD resistor
   * 1 X 1000 nF SMD capasitor 
@@ -43,17 +44,36 @@ The device consists of the next components:
 - Band type case for Wrist sensor
 - Raspberry Pi case 
 
-All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in 'doc'. 
+All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UPLOADED DOCUMENTS. 
 
 ### System Manual 
 #### 1. Installation
 
 To deploy and starts working with this device, we need to follow some steps. 
 
-[Hardware setting] 
-1. 
+#### [Hardware setting] 
 
-[Software setting] 
+![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
+![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
+* Connect PCB adaptor with Wrist sensor by RJ45 cable
+* Connect PCB adaptor pins with Raspberry Pi pins as shown in below table 
+
+|PCB adaptor | Raspberry Pi| 
+------------|-------------
+|    1      |     1 (3.3V)|
+|    3      |     3 (SDA) |
+|    5      |     5 (SCL) |
+|    39     |     39 (GND)|
+
+* Connect Piezo Buzzer pins with Raspberry Pi pins as shown in below table 
+
+|Piezo Buzzer | Raspberry Pi| 
+------------|-------------
+| Positive (+) |     11 (GPIO 17)|
+| Negative (-) |     14 (GND) |
+
+#### [Software setting] 
+
 
 #### 2. Make a Profile 
 
