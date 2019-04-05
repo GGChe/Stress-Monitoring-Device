@@ -9,9 +9,9 @@ Our tream provides an open-source real time embedded project based on the develo
 
 ## Table of Contents
 
-* [Introduction](#certifications)
-* [Required components](#the-learning-platform)
-* [System Manual]
+* [Introduction](#Introduction)
+* [Required Components](#Required Components)
+* [System Manual](#System Manual)
 * [Found a Bug](#found-a-bug)
 * [Found a Security Issue](#found-a-security-issue)
 * [Contributing](#contributing)
