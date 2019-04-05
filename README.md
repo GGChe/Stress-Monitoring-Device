@@ -54,6 +54,9 @@ To deploy and starts working with this device, we need to follow some steps.
 [Hardware setting] 
 
 ![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
+![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
+* Connect PCB adaptor with Wrist sensor by using RJ45 cable
+* 
 
 [Software setting] 
 *
