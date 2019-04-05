@@ -28,7 +28,7 @@ With the mentioned before, we can imagine that one of the most risky situations 
 
 Then, this project constitutes a reliable and attractive solution for parents, therapists and adults that want to monitor and control the stress status of the player.
 
-## Required components 
+### Required components 
 The device consists of the next components:
 - Raspberry Pi 3 B+
 - PCB adaptor: 
@@ -37,7 +37,8 @@ The device consists of the next components:
   * VEML6030 Light sensor 
   * 1 X 1 Kohm SMD resistors 
 
-#### 1. First step. Installation
+### System manual 
+#### 1. Installation
 
 To deploy and starts working with this device, we need to follow some steps. 
 
@@ -46,11 +47,11 @@ To deploy and starts working with this device, we need to follow some steps.
 
 [Software setting] 
 
-#### 2. Second step. Make a profile 
+#### 2. Make a profile 
 
 
 
-#### 3. Third step. Use case 
+#### 3. Use case 
 
 
 
