@@ -9,10 +9,10 @@ Our tream provides an open-source real time embedded project based on the develo
 
 ## Table of Contents
 
-* [Certifications](#certifications)
-* [The Learning Platform](#the-learning-platform)
+* [Introduction](#Introduction)
+* [Required Components](#Required Components)
+* [System Manual](#System Manual)
 * [Found a Bug](#found-a-bug)
-* [Found a Security Issue](#found-a-security-issue)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -28,15 +28,38 @@ With the mentioned before, we can imagine that one of the most risky situations 
 
 Then, this project constitutes a reliable and attractive solution for parents, therapists and adults that want to monitor and control the stress status of the player.
 
+### Required Components 
 The device consists of the next components:
-- Raspberry Pi
-- PCB adaptor
-- Wrist sensor
+- Raspberry Pi 3 B+
+- PCB adaptor: 
+  * 2 X 2Kohm SMD resistors
+- Wrist sensor:
+  * VEML6030 Light sensor 
+  * 1 X 1 Kohm SMD resistor 
+  * 1 X 10 Kohm SMD resistor
+  * 1 X 1000 nF SMD capasitor 
+- Piezo Buzzer
+- RJ45 Cable
+- Band type case for Wrist sensor
+- Raspberry Pi case 
 
-#### 1. First step. Installation
+All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in 'doc'. 
+
+### System Manual 
+#### 1. Installation
 
 To deploy and starts working with this device, we need to follow some steps. 
 
+[Hardware setting] 
+1. 
+
+[Software setting] 
+
+#### 2. Make a Profile 
+
+
+
+#### 3. Use Case 
 
 
 
