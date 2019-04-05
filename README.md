@@ -28,18 +28,23 @@ With the mentioned before, we can imagine that one of the most risky situations 
 
 Then, this project constitutes a reliable and attractive solution for parents, therapists and adults that want to monitor and control the stress status of the player.
 
+## Required components 
 The device consists of the next components:
-- Raspberry Pi
-- PCB adaptor
-- Wrist sensor
+- Raspberry Pi 3 B+
+- PCB adaptor: 
+  * 2 X 2Kohm SMD resistors
+- Wrist sensor:
+  * VEML6030 Light sensor 
+  * 1 X 1 Kohm SMD resistors 
 
 #### 1. First step. Installation
 
-To deploy and starts working with this device, we need to follow some steps.// 
-[Hardware] 
+To deploy and starts working with this device, we need to follow some steps. 
 
+[Hardware setting] 
+1. 
 
-[Software] 
+[Software setting] 
 
 #### 2. Second step. Make a profile 
 
