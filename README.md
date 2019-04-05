@@ -9,8 +9,9 @@ Our tream provides an open-source real time embedded project based on the develo
 
 ## Table of Contents
 
-* [Certifications](#certifications)
-* [The Learning Platform](#the-learning-platform)
+* [Introduction](#certifications)
+* [Required components](#the-learning-platform)
+* [System Manual]
 * [Found a Bug](#found-a-bug)
 * [Found a Security Issue](#found-a-security-issue)
 * [Contributing](#contributing)
@@ -28,7 +29,7 @@ With the mentioned before, we can imagine that one of the most risky situations 
 
 Then, this project constitutes a reliable and attractive solution for parents, therapists and adults that want to monitor and control the stress status of the player.
 
-### Required components 
+### Required Components 
 The device consists of the next components:
 - Raspberry Pi 3 B+
 - PCB adaptor: 
@@ -37,7 +38,7 @@ The device consists of the next components:
   * VEML6030 Light sensor 
   * 1 X 1 Kohm SMD resistors 
 
-### System manual 
+### System Manual 
 #### 1. Installation
 
 To deploy and starts working with this device, we need to follow some steps. 
@@ -47,11 +48,11 @@ To deploy and starts working with this device, we need to follow some steps.
 
 [Software setting] 
 
-#### 2. Make a profile 
+#### 2. Make a Profile 
 
 
 
-#### 3. Use case 
+#### 3. Use Case 
 
 
 
