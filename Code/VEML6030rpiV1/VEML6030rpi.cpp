@@ -1,5 +1,7 @@
 #include "VEML6030rpi.h"
-
+#include <wiringPiI2C.h>
+#include <math.h>
+#include "Iir.h"
 #include <iostream>
 using namespace std;
 
@@ -25,128 +27,199 @@ using namespace std;
 #define GAIN_1_8 0x1000 //Gain x1/8
 #define GAIN_1_4 0x1800 //Gain x1/4
 
-//Persistance will define how man consecutive values required to trigger interrupt
-#define PER_1 0x00 //Persistance of 1
-#define PER_2 0x10 //Persistance of 2
-#define PER_4 0x20 //Persistance of 4
-#define PER_8 0x30 //Persistance of 8
 
-void VEML6030rpi::VEML6030rpi(){
+VEML6030rpi::VEML6030rpi(){
 
 }
-void VEML6030rpi::initVEML(uint8_t ADR){//initializes the sensor
-  _ADR = ADR
-  uint8_t dByte[3];
-  dByte[0] = 0x00 ;
-  dByte[1] = 0x00 ;
-  dByte[2] = 0x00 ;
-  writeVEML(dByte, 3);
+void VEML6030rpi::initPlot(void){
+      // set up the initial plot data
+      for( int index=0; index<plotDataSize; ++index )
+      {
+	      xData[index] = 0;
+	      yData[index] = 0;
+      }
+
+      curve = new QwtPlotCurve;
+      plot = new QwtPlot;
+      // make a plot curve from the data and attach it to the plot
+      curve->setSamples(xData, yData, plotDataSize);
+      curve->attach(plot);
+
+      plot->replot();
+      plot->show();
+
+}
+void VEML6030rpi::initFilter(void){
+  const float samplingrate = 400000; // Hz
+  const float centerfrequency = 100; // Hz
+  const float widthfrequency = 99; // Hz
+  f.setup (samplingrate, centerfrequency, widthfrequency);
+}
+void VEML6030rpi::initVEML(uint8_t ADR){
+  initPlot();
+  initFilter();
+  fd = wiringPiI2CSetup(0x48);
+  if(fd <0){
+  cout<<"set up failed"<<endl;}
+  uint8_t dByteW[3] = {0x00, 0x00, 0x00};
+  writeVEML(dByteW, 3);
+}
+void VEML6030rpi::timerEvent(void){
+    als = getALS();
+    white = getWhite();
+
+    als = f.filter(als);
+    white = f.filter(white);
+
+    cout<<als<<"   "<<white<<"   "<<endl;
 }
 void VEML6030rpi::setALS(uint16_t cmd){
-  uint8_t dByte[3];
-  dByte[0] = ALS_CONF ;
-  dByte[1] = cmd & 0xFF ;
-  dByte[2] = (cmd >> 8) & 0xFF ;
-  writeVEML(dByte, 3) ;
+  uint8_t dByteW[3];
+  dByteW[0] = ALS_CONF ;
+  dByteW[1] = cmd & 0xFF ;
+  dByteW[2] = (cmd >> 8) & 0xFF ;
+  writeVEML(dByteW, 3) ;
 }
 void VEML6030rpi::setALS_WH(uint16_t wh){
-  uint8_t dByte[3];
-  dByte[0] = ALS_WH ;
-  dByte[1] = wh & 0xFF ;
-  dByte[2] = (wh >> 8) & 0xFF ;
-  writeVEML(dByte, 3) ;
+  uint8_t dByteW[3];
+  dByteW[0] = ALS_WH ;
+  dByteW[1] = wh & 0xFF ;
+  dByteW[2] = (wh >> 8) & 0xFF ;
+  writeVEML(dByteW, 3) ;
 }
 void VEML6030rpi::setALS_WL(uint16_t wl){
-  uint8_t dByte[3];
-  dByte[0] = ALS_WL ;
-  dByte[1] = wl & 0xFF ;
-  dByte[2] = (wl >> 8) & 0xFF ;
-  writeVEML(dByte, 3) ;
+  uint8_t dByteW[3];
+  dByteW[0] = ALS_WL ;
+  dByteW[1] = wl & 0xFF ;
+  dByteW[2] = (wl >> 8) & 0xFF ;
+  writeVEML(dByteW, 3) ;
 }
 void VEML6030rpi::powerSaving(uint16_t ps){
-  uint8_t dByte[3];
-  dByte[0] = PWR_SVG ;
-  dByte[1] = ps & 0xFF ;
-  dByte[2] = (ps >> 8) & 0xFF ;
-  writeVEML(dByte, 3) ;
+  uint8_t dByteW[3];
+  dByteW[0] = PWR_SVG ;
+  dByteW[1] = ps & 0xFF ;
+  dByteW[2] = (ps >> 8) & 0xFF ;
+  writeVEML(dByteW, 3) ;
 }
 uint16_t VEML6030rpi::getALS(void){
   uint16_t als = 0 ;
   uint8_t cmd = ALS_CMD ;
-  uint8_t dByte[2];
-  dByte = readVEML(cmd, 2) ;
-  als = (dByte[1] << 8) | dByte[0] ;
+  uint8_t dByteRA[2];
+  readVEML(cmd, dByteRA, 2) ;
+  //cout<<"dbyter"<<(int)dByteR[0]<<"     "<<(int)cmd<<"     "<<endl;
+  als = (dByteRA[1] << 8) | dByteRA[0] ;
   return ( als ) ;
 }
 uint16_t VEML6030rpi::getWhite(void){
   uint16_t wh = 0 ;
   uint8_t cmd = WHITE_CMD ;
-  uint8_t dByte[2];
-  dByte = readVEML(cmd, 2) ;
-  wh = (dByte[1] << 8) | dByte[0] ;
+  uint8_t dByteR[2];
+  readVEML(cmd, dByteR, 2) ;
+  wh = (dByteR[1] << 8) | dByteR[0] ;
   return ( wh ) ;
 }
 uint16_t VEML6030rpi::getALS_INT(void){
   uint16_t als_int = 0 ;
   uint8_t cmd = ALS_INT ;
-  uint8_t dByte[2];
-  dByte = readVEML(cmd, 2) ;
-  als_int = (dByte[1] << 8) | dByte[0] ;
+  uint8_t dByteR[2];
+  readVEML(cmd, dByteR, 2) ;
+  als_int = (dByteR[1] << 8) | dByteR[0] ;
   return ( als_int ) ;
 }
-uint8_t VEML6030::SetIntTime(unsigned int TimeBits){
-	Conf = readVEML(ALS_CONF, 1); //Update global config value
-	return writeVEML((Conf & 0xFC3F) | TimeBits , 1);
+uint8_t VEML6030rpi::SetIntTime(uint16_t TimeBits){
+  uint8_t cmd = ALS_CONF;
+  uint8_t dByteR[2];
+  dByteR[0] = 0x00;
+  dByteR[1] = 0x00;
+  readVEML(cmd, dByteR, 2) ; //Update global config value
+  uint8_t dByteW[3];
+  //cout<<(int)TimeBits<<endl;
+  dByteW[0] = ALS_CONF;
+  dByteW[1] = (TimeBits & 0xFF) | dByteR[0];
+  dByteW[2] = ((TimeBits >> 8) & 0xFF) | dByteR[1];
+	writeVEML(dByteW , 3);
 }
-uint8_t VEML6030::SetGain(unsigned int GainVal){
-	Conf = readVEML(ALS_CONF, 1); //Update global config value
-	return writeVEML((Conf & 0xE7FF) | GainVal , 1);
+uint8_t VEML6030rpi::SetGain(uint16_t GainVal){
+  uint8_t cmd = ALS_CONF;
+  uint8_t dByteR[2];
+  readVEML(cmd, dByteR, 2) ; //Update global config value
+  uint8_t dByteW[3];
+  dByteW[0] = ALS_CONF;
+  dByteW[1] = (GainVal & 0xFF) | dByteR[0];
+  dByteW[2] = ((GainVal >> 8) & 0xFF) | dByteR[1];
+	writeVEML(dByteW , 3);
 }
-unsigned int VEML6030::IntTime2Bits(unsigned int Time){
+unsigned int VEML6030rpi::IntTime2Bits(unsigned int Time){
 	uint8_t X2X1 = (int)(log(Time/100)/log(2));
 	uint8_t X4X3 = (int)(((Time % 100) / 25) + 2*(Time % 50)/25);
 	return ((X4X3 << 2) | (X2X1)) << 6;
 }
-unsigned int VEML6030::Gain2Bits(float GainVal){
-	for(int i = 0; i < 4; i++) {  //Use linear search to avoid float math and increase speed
-		if(GainVals[i] == GainVal) {
-			return (i << 11); //if entries match, return bits
+uint16_t VEML6030rpi::Gain2Bits(float GainVal){
+  float Gains[4] = {0.125, 0.25, 1, 2};
+  unsigned int GainsInBits[4] = {0x1000, 0x1800, 0x0000, 0x0800};
+	for(int i = 0; i < 4; i++){  //Use linear search to avoid float math and increase speed
+		if(Gains[i] == GainVal){
+			return (GainsInBits[i]); //if entries match, return bits
+			break;
 		}
 	}
 	return 0x1000; //Return gain of 1/8 if not a valid gain value
 }
-uint8_t VEML6030::Shutdown(void){ //Places device in shutdown low power mode
-  Conf = readVEML(ALS_CONF, 1); //Update global config value
-	return WriteConfig(Conf | 0x01 , 1); //Set shutdown bit
+uint8_t VEML6030rpi::Shutdown(void){ //Places device in shutdown low power mode
+  uint8_t dByteR[2];
+  uint8_t cmd = ALS_CONF;
+  readVEML(cmd, dByteR, 2) ;
+  uint8_t dByteW[3];
+  dByteW[0] = cmd;
+  dByteW[1] = dByteR[0] | 0x01;
+  dByteW[2] = dByteR[1] | 0x00;
+  writeVEML(dByteW , 3);  //Update global config value
 }
-uint8_t VEML6030::PowerOn(void){ //Turns device on from shutdown mode
-  Conf = readVEML(ALS_CONF, 1); //Update global config value
-	return writeVEML(Conf & 0xFFFE , 1); //Clear shutdown bit
+uint8_t VEML6030rpi::PowerOn(void){ //Turns device on from shutdown mode
+  uint8_t dByteR[2];
+  uint8_t cmd = ALS_CONF;
+  readVEML(cmd, dByteR, 2) ;
+  uint8_t dByteW[3];
+  dByteW[0] = cmd;
+  dByteW[1] = dByteR[0] & 0xFE;
+  dByteW[2] = dByteR[1] & 0xFF;
+  writeVEML(dByteW , 3);  //Update global config value
 }
-float VEML6030::GetResolution(float valALS, float Gain, float IntTime){//Add non-linear correction!
-	float Resolution = (1.8432/((float)IntTime/25.0))*(0.125/Gain);
+float VEML6030rpi::GetResolution(float Gain, float IntTime){//Add non-linear correction!
+  float Resolution = (1.8432/((float)IntTime/25.0))*(0.125/Gain);
+  //cout<<Gain<<"          "<<IntTime<<endl;
 	return Resolution; //Return scaled Lux mesurment
 }
-uint8_t VEML6030rpi::AutoRange(void){
+float VEML6030rpi::AutoRange(void){
   // PowerSaveOff(); //Turn power save off for fastest reading
-  float gainALS = GAIN_1_8 ;
-  float intTime = IT25 ;
-	SetIntTime(gainALS) ; //Set to minimum integration time
-	SetGain(intTime) ; //Set to minmum gain
-	PowerOn() ;
+  unsigned int gainALS = GAIN_1_8 ;
+  float Gains[4] = {0.125, 0.25, 1, 2};
+  unsigned int intTime = IT25 ;
+  float Ints[6] = {25,50, 100, 200, 400, 800};
 
-	delay(30); //Wait for new sample
-	float TestALS = getALS(); //Get new lux value
-  float TestLux = GetResolution(TestALS ,gainALS, intTime) * TestALS;
+	SetIntTime(intTime) ; //Set to minimum integration time
+	SetGain(gainALS) ; //Set to minmum gain
+	PowerOn() ;
+  int g = 0;
+  int inT = 0;
+  uint16_t TestALSB = getALS(); //Get new lux value
+  float TestALS = (int)TestALSB;
+
+
+  float resolution =  GetResolution(Gains[g], Ints[inT]);
+  float TestLux = resolution * TestALS;
 	unsigned long HighLux = 120796;  //Start at max value
 	unsigned int NewIntTime = 25; //Default to min value
 	float NewGainHigh = 0.125; //Default to min value
 	float NewGainLow = 0.25; //Default to 2nd lowest value
 	float NewGain = 0.125; //Default to min value
+  int j = 1;
 
 	if(TestLux < 236) {  //If Lux is too small to measure at max values (<1.8432) or in minimum range, simply set to highest gain and integration time
 		NewIntTime = 800;
+    inT = 5;
 		NewGain = 2;
+    g = 5;
 	}
 	else {  //If lux is not outside low range, search for a value
 		for(int i = 0; i < 6; i++) {
@@ -166,39 +239,68 @@ uint8_t VEML6030rpi::AutoRange(void){
 				}
 				else {
 					NewGainHigh = NewGainLow;
-					NewGainLow = GetGain(GainValBits[g + 1]);
+					NewGainLow = Gains[j + 1];
 				}
 			}
 		}
 	}
 
-	unsigned int GainBits = Gain2Bits(NewGain); //Convert new gain value
-	unsigned int IntBits = IntTime2Bits(NewIntTime); //Convert to new integration time
-
+	uint16_t GainBits = Gain2Bits(NewGain); //Convert new gain value
+	uint16_t IntBits = IntTime2Bits(NewIntTime); //Convert to new integration time
+	resolution = GetResolution(NewGain, NewIntTime);
+	//cout<<(int)GainBits<<"             "<<(int)IntBits<<endl;
+	//cout<<NewGain<<"             "<<NewIntTime<<endl;
 	SetGain(GainBits);
 	SetIntTime(IntBits);
-
   return resolution ;
 }
-uint16_t VEML6030rpi::readVEML(uint8_t addr, int len){//Reads from bytes from device
+void VEML6030rpi::readVEML(uint8_t addr, uint8_t* dByteR, int len){//Reads from bytes from device
   // open the I2C device (check with "ls -l/ dev/i2c*")
-  int file = open("/dev/i2c-2",O_RDWR);
+  /*int file = open("/dev/i2c-1",O_RDWR);
+  if(file < 0)
+  {cout<<"failed to open i2c"<<endl;}
   // tell the kernel which I2C address it is
-  ioctl(file, I2C_SLAVE, _ADR);
-  uint8_t dByte[len];
+  if(ioctl(file, I2C_SLAVE, _ADR)<0)
+  {cout<<"problem establishing buss access"<<endl;}
   // write byte
-  write(file, (char *)addr, 1) ;
+  char t[2] = {0x48, addr};
+  char taddr[1] = {0x48};
+  if(write(file, t, 2) != 2)
+    {cout<<"error writing"<<endl;}
   // read bytes
-  read(file, (char *)dByte, len);
-  return dByte;
-}
-void VEML6030rpi::writeVEML(uint8_t dByte , int len){//Writes bytes to device
-  // open the I2C device (check with "ls -l/ dev/i2c*")
-  int file = open("/dev/i2c-2",O_RDWR) ;
-  // tell the kernel which I2C address it is
-  ioctl(file, I2C_SLAVE, _ADR) ;
+  if(write(file, taddr,1) != 1)
+  {cout<<"error writing addr" <<endl;}
+  if(read(file, (char *)dByteR, len) != len)
+  {cout <<"failed to read"<< endl;}
+  else*/
 
   // write byte
-  write(file, (char *)dByte, len) ;
+    uint16_t dword=0;
+dword = wiringPiI2CReadReg16(fd, addr);
+if(dword<0)
+{cout<<"error writing"<<endl;}
+    dByteR[0] = dword & 0xFF ;
+    dByteR[1] = (dword >> 8) & 0xFF ;
 
+
+  //cout<<"R       "<<(int)addr<<"       "<<(int)dword<<endl;
+}
+void VEML6030rpi::writeVEML(uint8_t* dByteW, int len){//Writes bytes to device
+  // open the I2C device (check with "ls -l/ dev/i2c*")
+
+  //cout<<(int)dByteW[0]<<"     "<<(int)dByteW[1]<<"     "<<(int)dByteW[2]<<endl;
+  /*char taddr[1] = {0x48};
+  int file = open("/dev/i2c-1",O_RDWR) ;
+    if(file < 0)
+  {cout<<"failed to open i2c"<<endl;}
+  // tell the kernel which I2C address it is
+  if(ioctl(file, I2C_SLAVE, _ADR)<0)
+    {cout<<"problem establishing buss access"<<endl;}*/
+  // write byte
+    uint16_t dword = (dByteW[2] << 8) | dByteW[1] ;
+    cout<<"W       "<<(int)dByteW[0]<<"           "<<(int)dword<<endl;
+  if(wiringPiI2CWriteReg16(fd, dByteW[0], dword)<0)
+    {cout<<"error writing"<<endl;}
+    dByteW[1] = dword & 0xFF ;
+    dByteW[2] = (dword >> 8) & 0xFF ;
 }

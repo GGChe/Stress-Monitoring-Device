@@ -1,5 +1,0 @@
-In file included from C:\Users\hp\Documents\UOG\RTED\Code\mbed\VEMLrpi2test.cpp:1:
-C:\Users\hp\Documents\UOG\RTED\Code\mbed\VEMLrpi2.h:6:10: fatal error: sys/ioctl.h: No such file or directory
- #include <sys/ioctl.h>
-          ^~~~~~~~~~~~~
-compilation terminated.
