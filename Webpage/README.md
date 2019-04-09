@@ -1,17 +1,26 @@
-# Electronic Design
+# Website
 
-This project consists of 2 main Printec Circuit Boards (PCB)pcbs: RPI adaptor and Sensor PCb.
+We have developed a webpage architecture that is going to be the configuration interface between the user and the device. By login in the website and using the resources available in it the user is able to modify the parameters of their profile by the proposed calibration. 
 
-The feature of the RPI adaptor pcb is to connect the correct RPI pines to the sensor circuit that we are using. We need to guide all the signal through a RJ45 cable that is going to the sensor pcb. Thus, it is need to adapt and guide signal in the correct order. 
+The webpage main feature is to initialise the device and all the configuration needed for that as well as identify the user too have more than one user on the same device. Thus, if we load one user, we will be using that user all the time until we connect the device to internet and we change the user to other one.
 
-The pcbs are shown below:
-<p align="center">
-<img width="550" height="350" src="https://user-images.githubusercontent.com/16301652/55814882-48fd0f00-5ae7-11e9-96ee-c73947e28953.png")
-</p>
+The methodology is the following one:
+
+1- The first time you enter in the webpage you would need to signup. That will automatically generate a "login.txt" file on the /var/www/html/Project folder of the RPI. From here, all the files generated will be storaged on the same folder.
+
+2- Once the user is created and registered, the webpage will 
+create an "user.txt" where it will set the user that is already registered.
+
+3- The first time that a user is signed up, it will appear the calibration webpage that is going to interact with the RPI to measure the Heart Rate Average of the user during the tasks required. 
+
+4- After the calibration, that can be done only the first time you log in or in your profile page, we go to the session webpage. In this webpage you have the possibility of recalibrate the sensor. If not, we go to the Session webpage.
+
+5- In the Session webpage, we can manually run the sensor by using the button provided.
 
 
-<p align="center">
-<img width="550" height="350" src="https://user-images.githubusercontent.com/16301652/55814986-78ac1700-5ae7-11e9-9d75-2e07e2bf661c.png")
-</p>
+That is everything! There you have a demo video of how to use the webpage architecture created!
 
-All the components that we are using on the PCB are Surface Mount Devices (SMD) and therefore, we should need a reflow oven to solder them, even though youu can solder everything by hang if you are skilled enough. 
+LINK
+
+
+
