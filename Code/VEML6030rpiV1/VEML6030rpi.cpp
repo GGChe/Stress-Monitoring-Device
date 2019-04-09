@@ -38,7 +38,8 @@ void VEML6030rpi::initFilter(void){
   const float center = 5; // Hz
   const float width = 4.5;
   const float cutoff = 1;
-  f.setup (samplingrate, cutoff);
+  f.setup(samplingrate, center, width);
+  //f.setup (samplingrate, cutoff);
   f.reset();
 }
 void VEML6030rpi::initbpm(void){
@@ -87,8 +88,8 @@ void VEML6030rpi::timerEvent(void){
 
     bpm();
 
-    cout<<als<<"   "<<white<<"   "<<lux<<endl;
-    myfile<<lux<<" "<<endl;
+    cout<<als<<"   "<<white<<"   "<<whitelux<<endl;
+    myfile<<white<<" "<<endl;
 }
 void VEML6030rpi::setALS(uint16_t cmd){
   uint8_t dByteW[3];

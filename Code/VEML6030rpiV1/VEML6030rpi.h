@@ -40,7 +40,8 @@ class VEML6030rpi : public CppTimer{
     virtual void timerEvent(void);
     ofstream myfile;
   private:
-    Iir::Butterworth::HighPass<4> f;
+    //Iir::Butterworth::HighPass<4> f;
+    Iir::Butterworth::BandPass<4, Iir::DirectFormI> f;
     float resolution, lux, thd, whitelux;
     float ctr = 0;
     int fd, tbpm, pbpm;
