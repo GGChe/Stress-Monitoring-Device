@@ -18,5 +18,5 @@ Top case is desinged by below criteria:
 ## Raspberry-Pi CASE - Bottom 
 
 <p align="center">
-  <img width="550" height="350" src="https://user-images.githubusercontent.com/46483800/55817793-25d55e00-5aed-11e9-9df1-6e0ec09588d4.jpg">
+  <img width="550" height="350" src="https://user-images.githubusercontent.com/46483800/55818061-abf1a480-5aed-11e9-901e-2b604d601f38.JPG">
 </p>
