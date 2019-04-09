@@ -123,19 +123,6 @@ VEMLtest.out/fast:
 	$(MAKE) -f CMakeFiles/VEMLtest.out.dir/build.make CMakeFiles/VEMLtest.out.dir/build
 .PHONY : VEMLtest.out/fast
 
-#=============================================================================
-# Target rules for targets named VEMLtest.out_automoc
-
-# Build rule for target.
-VEMLtest.out_automoc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 VEMLtest.out_automoc
-.PHONY : VEMLtest.out_automoc
-
-# fast build rule for target.
-VEMLtest.out_automoc/fast:
-	$(MAKE) -f CMakeFiles/VEMLtest.out_automoc.dir/build.make CMakeFiles/VEMLtest.out_automoc.dir/build
-.PHONY : VEMLtest.out_automoc/fast
-
 VEML6030rpi.o: VEML6030rpi.cpp.o
 
 .PHONY : VEML6030rpi.o
@@ -162,33 +149,6 @@ VEML6030rpi.s: VEML6030rpi.cpp.s
 VEML6030rpi.cpp.s:
 	$(MAKE) -f CMakeFiles/VEMLtest.out.dir/build.make CMakeFiles/VEMLtest.out.dir/VEML6030rpi.cpp.s
 .PHONY : VEML6030rpi.cpp.s
-
-VEMLtest.out_automoc.o: VEMLtest.out_automoc.cpp.o
-
-.PHONY : VEMLtest.out_automoc.o
-
-# target to build an object file
-VEMLtest.out_automoc.cpp.o:
-	$(MAKE) -f CMakeFiles/VEMLtest.out.dir/build.make CMakeFiles/VEMLtest.out.dir/VEMLtest.out_automoc.cpp.o
-.PHONY : VEMLtest.out_automoc.cpp.o
-
-VEMLtest.out_automoc.i: VEMLtest.out_automoc.cpp.i
-
-.PHONY : VEMLtest.out_automoc.i
-
-# target to preprocess a source file
-VEMLtest.out_automoc.cpp.i:
-	$(MAKE) -f CMakeFiles/VEMLtest.out.dir/build.make CMakeFiles/VEMLtest.out.dir/VEMLtest.out_automoc.cpp.i
-.PHONY : VEMLtest.out_automoc.cpp.i
-
-VEMLtest.out_automoc.s: VEMLtest.out_automoc.cpp.s
-
-.PHONY : VEMLtest.out_automoc.s
-
-# target to generate assembly for a file
-VEMLtest.out_automoc.cpp.s:
-	$(MAKE) -f CMakeFiles/VEMLtest.out.dir/build.make CMakeFiles/VEMLtest.out.dir/VEMLtest.out_automoc.cpp.s
-.PHONY : VEMLtest.out_automoc.cpp.s
 
 demoVEML6030rpi.o: demoVEML6030rpi.cpp.o
 
@@ -226,13 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... VEMLtest.out"
-	@echo "... VEMLtest.out_automoc"
 	@echo "... VEML6030rpi.o"
 	@echo "... VEML6030rpi.i"
 	@echo "... VEML6030rpi.s"
-	@echo "... VEMLtest.out_automoc.o"
-	@echo "... VEMLtest.out_automoc.i"
-	@echo "... VEMLtest.out_automoc.s"
 	@echo "... demoVEML6030rpi.o"
 	@echo "... demoVEML6030rpi.i"
 	@echo "... demoVEML6030rpi.s"

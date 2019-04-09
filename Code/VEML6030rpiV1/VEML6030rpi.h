@@ -1,13 +1,11 @@
 #ifndef VEML6030rpi_h
 #define VEML6030rpi_h
-#include <qwt/qwt_thermo.h>
-#include <qwt/qwt_knob.h>
-#include <qwt/qwt_plot.h>
-#include <qwt/qwt_plot_curve.h>
-#include <QBoxLayout>
+
 #include "Iir.h"
 #include <unistd.h>
 #include <fcntl.h>
+#include <fstream>
+#include <string>
 #include <sys/ioctl.h>
 #include <linux/i2c-dev.h>
 #include "CppTimer.h"
@@ -18,9 +16,11 @@ using namespace std;
 class VEML6030rpi : public CppTimer{
   public:
     VEML6030rpi();
-    void initPlot(void);
+    void initbpm(void);
     void initFilter(void);
     uint16_t als,white;
+    void bpm(void);
+    void avgBpm(void);
     void initVEML(uint8_t _ADR );
     void setALS(uint16_t cmd);
     void setALS_WH(uint16_t wh);
@@ -38,14 +38,12 @@ class VEML6030rpi : public CppTimer{
     float GetResolution(float Gain, float IntTime);
     float AutoRange(void);
     virtual void timerEvent(void);
-    QwtPlot      *plot;
-	QwtPlotCurve *curve;
+    ofstream myfile;
   private:
-  	static const int plotDataSize = 100;
-  	double xData[plotDataSize];
-	double yData[plotDataSize];
-    Iir::Butterworth::BandPass<4> f;
-    int fd;
+    Iir::Butterworth::HighPass<4> f;
+    float resolution, lux, thd, whitelux;
+    float ctr = 0;
+    int fd, tbpm, pbpm;
     void readVEML(uint8_t addr, uint8_t* dByteR, int len);
     void writeVEML(uint8_t* dByteW , int len);
 

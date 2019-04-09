@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/VEMLtest.out.dir/demoVEML6030rpi.cpp.o CMakeFiles/VEMLtest.out.dir/VEML6030rpi.cpp.o CMakeFiles/VEMLtest.out.dir/VEMLtest.out_automoc.cpp.o  -o VEMLtest.out -rdynamic -lwiringPi -lrt /usr/local/lib/libiir_static.a /usr/lib/arm-linux-gnueabihf/libQt5Widgets.so.5.7.1 /usr/lib/arm-linux-gnueabihf/libQt5Gui.so.5.7.1 /usr/lib/arm-linux-gnueabihf/libQt5Core.so.5.7.1 
+/usr/bin/c++      CMakeFiles/VEMLtest.out.dir/demoVEML6030rpi.cpp.o CMakeFiles/VEMLtest.out.dir/VEML6030rpi.cpp.o  -o VEMLtest.out -rdynamic -lwiringPi -lrt /usr/local/lib/libiir_static.a 

@@ -1,6 +1,8 @@
 #include "VEML6030rpi.h"
 #include <wiringPiI2C.h>
 #include <math.h>
+#include <fstream>
+#include <string>
 #include "Iir.h"
 #include <iostream>
 using namespace std;
@@ -31,47 +33,62 @@ using namespace std;
 VEML6030rpi::VEML6030rpi(){
 
 }
-void VEML6030rpi::initPlot(void){
-      // set up the initial plot data
-      for( int index=0; index<plotDataSize; ++index )
-      {
-	      xData[index] = 0;
-	      yData[index] = 0;
-      }
-
-      curve = new QwtPlotCurve;
-      plot = new QwtPlot;
-      // make a plot curve from the data and attach it to the plot
-      curve->setSamples(xData, yData, plotDataSize);
-      curve->attach(plot);
-
-      plot->replot();
-      plot->show();
-
-}
 void VEML6030rpi::initFilter(void){
-  const float samplingrate = 400000; // Hz
-  const float centerfrequency = 100; // Hz
-  const float widthfrequency = 99; // Hz
-  f.setup (samplingrate, centerfrequency, widthfrequency);
+  const float samplingrate = 100000; // Hz
+  const float center = 5; // Hz
+  const float width = 4.5;
+  const float cutoff = 1;
+  f.setup (samplingrate, cutoff);
+  f.reset();
+}
+void VEML6030rpi::initbpm(void){
+  thd = 0;
+
 }
 void VEML6030rpi::initVEML(uint8_t ADR){
-  initPlot();
+  myfile.open ("white.txt");
   initFilter();
+  initbpm();
   fd = wiringPiI2CSetup(0x48);
   if(fd <0){
   cout<<"set up failed"<<endl;}
   uint8_t dByteW[3] = {0x00, 0x00, 0x00};
   writeVEML(dByteW, 3);
 }
+void VEML6030rpi::bpm(void){
+  if(lux > thd){
+    tbpm = 60*((ctr)/100000);
+    //cout<<lux <<endl;
+    if(tbpm >= 50 && tbpm <= 170){
+      pbpm = tbpm;
+      ctr = 0;
+      cout<<"BPM: "<<pbpm<<endl;
+    }
+    else
+    {
+      ctr++;
+    }
+  }
+  else{
+    ctr++;
+  }
+}
+void VEML6030rpi::avgBpm(void){
+
+}
 void VEML6030rpi::timerEvent(void){
     als = getALS();
     white = getWhite();
 
     als = f.filter(als);
+    lux = (float)als*resolution;
     white = f.filter(white);
+    whitelux = (float)white*resolution;
 
-    cout<<als<<"   "<<white<<"   "<<endl;
+    bpm();
+
+    cout<<als<<"   "<<white<<"   "<<lux<<endl;
+    myfile<<lux<<" "<<endl;
 }
 void VEML6030rpi::setALS(uint16_t cmd){
   uint8_t dByteW[3];
@@ -206,7 +223,7 @@ float VEML6030rpi::AutoRange(void){
   float TestALS = (int)TestALSB;
 
 
-  float resolution =  GetResolution(Gains[g], Ints[inT]);
+  resolution =  GetResolution(Gains[g], Ints[inT]);
   float TestLux = resolution * TestALS;
 	unsigned long HighLux = 120796;  //Start at max value
 	unsigned int NewIntTime = 25; //Default to min value

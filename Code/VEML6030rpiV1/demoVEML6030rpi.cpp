@@ -14,10 +14,11 @@ int main(void)
 
     printf("=== VEML6030 RPI test ===\n") ;
     printf("Lux, White\n") ;
-    veml6030.start(1000000);
+    veml6030.start(10000);
     while(1){
       sleep(100);
     }
+    veml6030.myfile.close();
 
 
 }

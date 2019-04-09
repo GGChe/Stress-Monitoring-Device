@@ -63,10 +63,10 @@ CMAKE_BINARY_DIR = /home/pi/Desktop/VEML6030rpiV1
 # Target rules for target CMakeFiles/VEMLtest.out.dir
 
 # All Build rule for target.
-CMakeFiles/VEMLtest.out.dir/all: CMakeFiles/VEMLtest.out_automoc.dir/all
+CMakeFiles/VEMLtest.out.dir/all:
 	$(MAKE) -f CMakeFiles/VEMLtest.out.dir/build.make CMakeFiles/VEMLtest.out.dir/depend
 	$(MAKE) -f CMakeFiles/VEMLtest.out.dir/build.make CMakeFiles/VEMLtest.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/VEML6030rpiV1/CMakeFiles --progress-num=1,2,3,4 "Built target VEMLtest.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/VEML6030rpiV1/CMakeFiles --progress-num=1,2,3 "Built target VEMLtest.out"
 .PHONY : CMakeFiles/VEMLtest.out.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/VEMLtest.out.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VEMLtest.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/VEML6030rpiV1/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/VEML6030rpiV1/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/VEMLtest.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/VEML6030rpiV1/CMakeFiles 0
 .PHONY : CMakeFiles/VEMLtest.out.dir/rule
@@ -93,38 +93,6 @@ CMakeFiles/VEMLtest.out.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/VEMLtest.out.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/VEMLtest.out_automoc.dir
-
-# All Build rule for target.
-CMakeFiles/VEMLtest.out_automoc.dir/all:
-	$(MAKE) -f CMakeFiles/VEMLtest.out_automoc.dir/build.make CMakeFiles/VEMLtest.out_automoc.dir/depend
-	$(MAKE) -f CMakeFiles/VEMLtest.out_automoc.dir/build.make CMakeFiles/VEMLtest.out_automoc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/VEML6030rpiV1/CMakeFiles --progress-num=5 "Built target VEMLtest.out_automoc"
-.PHONY : CMakeFiles/VEMLtest.out_automoc.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/VEMLtest.out_automoc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/VEML6030rpiV1/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/VEMLtest.out_automoc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/VEML6030rpiV1/CMakeFiles 0
-.PHONY : CMakeFiles/VEMLtest.out_automoc.dir/rule
-
-# Convenience name for target.
-VEMLtest.out_automoc: CMakeFiles/VEMLtest.out_automoc.dir/rule
-
-.PHONY : VEMLtest.out_automoc
-
-# clean rule for target.
-CMakeFiles/VEMLtest.out_automoc.dir/clean:
-	$(MAKE) -f CMakeFiles/VEMLtest.out_automoc.dir/build.make CMakeFiles/VEMLtest.out_automoc.dir/clean
-.PHONY : CMakeFiles/VEMLtest.out_automoc.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/VEMLtest.out_automoc.dir/clean
 
 .PHONY : clean
 

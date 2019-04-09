@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
-  "VEMLtest.out_automoc.cpp"
   "CMakeFiles/VEMLtest.out.dir/demoVEML6030rpi.cpp.o"
   "CMakeFiles/VEMLtest.out.dir/VEML6030rpi.cpp.o"
-  "CMakeFiles/VEMLtest.out.dir/VEMLtest.out_automoc.cpp.o"
   "VEMLtest.out.pdb"
   "VEMLtest.out"
 )

@@ -1,3 +1,0 @@
-﻿  pch.cpp
-  stressControl1.1.cpp
-c:\users\mufasa\source\repos\stresscontrol1.1\stresscontrol1.1\stresscontrol1.1.cpp(34): fatal error C1010: final de archivo inesperado al buscar la directiva de encabezado precompilado. Compruebe si olvidó agregar '#include "pch.h"' al código fuente?
