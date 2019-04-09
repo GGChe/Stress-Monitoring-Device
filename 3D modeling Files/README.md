@@ -1,4 +1,4 @@
-## 3D modeling for Strerss Controller cases 
+## 3D modeling cases for Strerss Controller 
 To consider about the product's usability, PCB and Raspberry Pi cases are desinged by 'Solid Works'.  
 
 ## PCB_CASE
