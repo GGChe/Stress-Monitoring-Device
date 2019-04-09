@@ -37,7 +37,7 @@
 
    <form  method="post">
    
-   <input type="submit" name="button" value="RUN"/>
+   <input type="submit" name="button" value="RUN/STOP"/>
 
      </form>
      <br>
@@ -49,39 +49,38 @@
 
   <?php
 if (isset($_POST['button'])) {
-    if (file_exists('/home/user/Project/status.txt')) {
-        $myfile = fopen('/home/user/Project/status.txt', 'r');
+    if (file_exists('/var/www/html/Project/status.txt')) {
+        $myfile = fopen('/var/www/html/Project/status.txt', 'r');
         $number=fgets($myfile);
         fclose($myfile);
         if ($number=="1") { //The device is off, then we turn it on.
-            $myfile = fopen('/home/user/Project/status.txt', 'w');
+            $myfile = fopen('/var/www/html/Project/status.txt', 'w');
             fwrite($myfile, "0");
             fclose($myfile);
-          
             echo "<script>
             swal({
               title: 'Are you sure?',
-              text: 'You will close the session!',
+              text: 'You will start the session!',
               type: 'warning',
               showCancelButton: true,
               confirmButtonColor: '#3085d6',
               cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, close it!'
+              confirmButtonText: 'Yes, start it!'
             }).then(function() {
               swal(
-                'Session closed!',
-                'Your session has been closed',
+                'Session started!',
+                'Your session has been started',
                 'success'
               );
               setTimeout(function () {
-                window.location.href = 'startsession.php'; //will redirect to your blog page (an ex: blog.html)
+                window.location.href = 'startsession.php';
              }, 2000); //will call the function after 2 secs.
             })
-          
+
       </script>";
         } else { // In this case, we would have the device off or an invalid number.
             if ($number=="0") {
-                $myfile = fopen('/home/user/Project/status.txt', 'w');
+                $myfile = fopen('/var/www/html/Project/status.txt', 'w');
                 fwrite($myfile, "1");
                 fclose($myfile);
                 echo "<script>
@@ -100,13 +99,13 @@ if (isset($_POST['button'])) {
                 'success'
               );
               setTimeout(function () {
-                window.location.href = 'startsession.php'; //will redirect to your blog page (an ex: blog.html)
+                window.location.href = 'startsession.php'; 
              }, 2000); //will call the function after 2 secs.
             })
-          g
+
       </script>";
             } else {
-                $myfile = fopen('/home/user/Project/status.txt', 'w');
+                $myfile = fopen('/var/www/html/Project/status.txt', 'w');
                 fwrite($myfile, "1");
                 fclose($myfile);
                 echo "<script>
@@ -117,13 +116,14 @@ if (isset($_POST['button'])) {
             }
         }
     } else {
-        $fp = fopen('/home/user/Project/status.txt', 'w');
+        $fp = fopen('/var/www/html/Project/status.txt', 'w');
         //To have admin permission, we need to use the umask command
         $old = umask(0);
-        file_put_contents("/home/user/Project/status.txt", "0");
-        chmod("/home/user/Project/status.txt", 0777);
+        file_put_contents("/var/www/html/Project/status.txt", "0");
+        chmod("/var/www/html/Project/status.txt", 0777);
         umask($old);
         fclose($fp);
+        echo "<script> swal('Welcome to your first time in FreeStressGaming, press again and start playing safe!');</script>";
     }
 }
  ?>

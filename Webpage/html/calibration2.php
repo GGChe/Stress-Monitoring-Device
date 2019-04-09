@@ -58,11 +58,11 @@
   <?php
 if (isset($_POST['button'])) {
   
-      $myfile = fopen('/home/user/Project/config.txt', 'r');
+      $myfile = fopen('/var/www/html/Project/config.txt', 'r');
       $number=fgets($myfile);
       fclose($myfile);
       if ($number=="0") { //The device is off, then we turn it on.
-        $myfile = fopen('/home/user/Project/config.txt', 'w');
+        $myfile = fopen('/var/www/html/Project/config.txt', 'w');
         fwrite($myfile, "1");
         fclose($myfile);
 
@@ -76,8 +76,7 @@ if (isset($_POST['button'])) {
        }, 1000); //will call the function after 1 sec.
         </script>";
 
-
-        $myfile = fopen('/home/user/Project/config.txt', 'w');
+        $myfile = fopen('/var/www/html/Project/config.txt', 'w');
         fwrite($myfile, "0");
         fclose($myfile);
     } else { // In this case, we would have the device off or an invalid number.

@@ -54,12 +54,12 @@
    </html>
   <?php
 if (isset($_POST['button'])) {
-  if (file_exists('/home/user/Project/config.txt')) {
-      $myfile = fopen('/home/user/Project/config.txt', 'r');
+  if (file_exists('/var/www/html/Project/config.txt')) {
+      $myfile = fopen('/var/www/html/Project/config.txt', 'r');
       $number=fgets($myfile);
       fclose($myfile);
       if ($number=="0") { //The device is off, then we turn it on.
-          $myfile = fopen('/home/user/Project/config.txt', 'w');
+          $myfile = fopen('/var/www/html/Project/config.txt', 'w');
           fwrite($myfile, "1");
           fclose($myfile);
 
@@ -67,7 +67,7 @@ if (isset($_POST['button'])) {
           ob_end_flush();
           flush();
           sleep(3);
-          $myfile = fopen('/home/user/Project/config.txt', 'w');
+          $myfile = fopen('/var/www/html/Project/config.txt', 'w');
           fwrite($myfile, "0");
           fclose($myfile);
           
@@ -81,11 +81,11 @@ if (isset($_POST['button'])) {
           
       } 
   } else {
-      $fp = fopen('/home/user/Project/config.txt', 'w');
+      $fp = fopen('/home/pi/Project/config.txt', 'w');
       //To have admin permission, we need to use the umask command
       $old = umask(0);
-      file_put_contents("/home/user/Project/config.txt", "1"); 
-      chmod("/home/user/Project/config.txt", 0777);
+      file_put_contents("/var/www/html/Project/config.txt", "1"); 
+      chmod("/var/www/html/Project/config.txt", 0777);
       umask($old);
       fclose($fp);
       echo "<script> swal('Please, wait one minute');</script>";
@@ -93,7 +93,7 @@ if (isset($_POST['button'])) {
           flush();
           sleep(3);
           
-          $myfile = fopen('/home/user/Project/config.txt', 'w');
+          $myfile = fopen('/var/www/html/Project/config.txt', 'w');
           fwrite($myfile, "0");
           fclose($myfile);
 

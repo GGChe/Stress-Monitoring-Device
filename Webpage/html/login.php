@@ -56,11 +56,11 @@
    </html>
   <?php
   if (isset($_POST['IDdata'])) {
-      if (file_exists('/home/user/Project/login.txt')) {
+      if (file_exists('/var/www/html/Project/login.txt')) {
         $name=$_POST['IDdata'];
         $name=str_replace(' ', '', $name);
         if (!empty($name)) {
-          $filecontent=file_get_contents('/home/user/Project/login.txt');
+          $filecontent=file_get_contents('/var/www/html/Project/login.txt');
           $pos=strpos($filecontent,$name);
                   if ($pos===false) {
                     echo "<script> swal('ERROR!', 'Please, Sign up', 'error');</script>";
@@ -81,16 +81,16 @@
   }
 
 if (isset($_POST['signup'])) {
-    if (file_exists('/home/user/Project/login.txt')) {
+    if (file_exists('/var/www/html/Project/login.txt')) {
         echo "<script> swal('Sign up', 'You will be redirected to the sign up page', 'success');</script>";
         header("refresh:2; url=signup.php"); //move to the sign page
     } else {
         echo "<script> swal('Sign up', 'You will be redirected to the sign up page', 'success');</script>";
-            
-        $fp = fopen('/home/user/Project/login.txt', 'w');
+        mkdir ("Project");
+        $fp = fopen('/var/www/html/Project/login.txt', 'w');
         $old = umask(0);
-        file_put_contents("/home/user/Project/login.txt", "/"."admin/");
-        chmod("/home/user/Project/login.txt", 0777);
+        file_put_contents("/var/www/html/Project/login.txt", "/"."admin/");
+        chmod("/var/www/html/Project/login.txt", 0777);
         umask($old);
         fclose($fp);
         header("refresh:2; url=signup.php"); //move to the signup page

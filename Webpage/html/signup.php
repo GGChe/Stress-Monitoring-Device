@@ -52,14 +52,23 @@
    </html>
   <?php
 
-  $fp = fopen('/home/user/Project/login.txt', 'a');
+  $fp = fopen('/var/www/html/Project/login.txt', 'a');
     if (isset($_POST['IDdata'])) {
       $name=$_POST['IDdata'];
       $name = str_replace(' ', '', $name);
       if($name!=""){
         fwrite($fp, $name."/");
         setcookie("user", $name, time() + (86400), "/"); // 86400 = 1 day
+        
+        $fp2 = fopen('/var/www/html/Project/user.txt', 'w');
+        $old = umask(0);
+        file_put_contents("/var/www/html/Project/user.txt", $name);
+        chmod("/var/www/html/Project/user.txt", 0777);
+        umask($old);
+        fclose($fp);
+        
         echo "<script> swal('User created', 'You will be redirected to the calibration ', 'success');</script>";
+        
         header("refresh:1; url=calibration.php"); //move to the status page
     }else{
       echo "<script> swal('ERROR!', 'Please, enter your new user', 'error');</script>";
