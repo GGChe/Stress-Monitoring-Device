@@ -6,16 +6,16 @@ The webpage main feature is to initialise the device and all the configuration n
 
 The methodology is the following one:
 
-1- The first time you enter in the webpage you would need to signup. That will automatically generate a "login.txt" file on the /var/www/html/Project folder of the RPI. From here, all the files generated will be storaged on the same folder.
+- The first time you enter in the webpage you would need to signup. That will automatically generate a "login.txt" file on the /var/www/html/Project folder of the RPI. From here, all the files generated will be storaged on the same folder.
 
-2- Once the user is created and registered, the webpage will 
+- Once the user is created and registered, the webpage will 
 create an "user.txt" where it will set the user that is already registered.
 
-3- The first time that a user is signed up, it will appear the calibration webpage that is going to interact with the RPI to measure the Heart Rate Average of the user during the tasks required. 
+- The first time that a user is signed up, it will appear the calibration webpage that is going to interact with the RPI to measure the Heart Rate Average of the user during the tasks required. 
 
-4- After the calibration, that can be done only the first time you log in or in your profile page, we go to the session webpage. In this webpage you have the possibility of recalibrate the sensor. If not, we go to the Session webpage.
+- After the calibration, that can be done only the first time you log in or in your profile page, we go to the session webpage. In this webpage you have the possibility of recalibrate the sensor. If not, we go to the Session webpage.
 
-5- In the Session webpage, we can manually run the sensor by using the button provided.
+- In the Session webpage, we can manually run the sensor by using the button provided.
 
 
 That is everything! There you have a demo video of how to use the webpage architecture created!
