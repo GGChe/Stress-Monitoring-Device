@@ -88,8 +88,9 @@ To deploy and starts working with this device, we need to follow some steps.
 
 ### Found a bug?
 
-If you think you've found a bug and  you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the sbug.
+Bugs can be reported at: https://github.com/GGChe/Stress_Controller_Device/issues
 
+Please try the latest release build before reporting, be sure to also include any logs or steps to reproduce you may have, as well as your Forge version, and whether or not you are using a third party loader such as Cauldron. When submitting logs please use a service such as Pastebin, do not paste the log directly into the issue.
 
 ### Contributing
 
