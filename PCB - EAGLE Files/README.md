@@ -11,13 +11,7 @@ The pcbs are shown below:
 <img width="550" height="350" src="https://user-images.githubusercontent.com/16301652/55814882-48fd0f00-5ae7-11e9-96ee-c73947e28953.png")
 </p>
 
-<<<<<<< HEAD
+
 <p align="right">
 <img width="550" height="350" src="https://user-images.githubusercontent.com/16301652/55814986-78ac1700-5ae7-11e9-9d75-2e07e2bf661c.png")
 </p>
-=======
-![RPI-PCB](https://user-images.githubusercontent.com/16301652/55814882-48fd0f00-5ae7-11e9-96ee-c73947e28953.png)| width=100)
-
-
-![SENSOR-PCB](https://user-images.githubusercontent.com/16301652/55814986-78ac1700-5ae7-11e9-9d75-2e07e2bf661c.png)
->>>>>>> 99501cebe357aa27087b6cd6ea249febc0523190
