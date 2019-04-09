@@ -8,7 +8,7 @@ The feature of this pcb is to connect the correct RPI pines to the sensor circui
 
 The pcbs are shown below:
 
-![RPI-PCB](https://user-images.githubusercontent.com/16301652/55814882-48fd0f00-5ae7-11e9-96ee-c73947e28953.png)
+![RPI-PCB](https://user-images.githubusercontent.com/16301652/55814882-48fd0f00-5ae7-11e9-96ee-c73947e28953.png)| width=100)
 
 
 ![SENSOR-PCB](https://user-images.githubusercontent.com/16301652/55814986-78ac1700-5ae7-11e9-9d75-2e07e2bf661c.png)
