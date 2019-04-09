@@ -9,4 +9,8 @@ Top case is desinged by below criteria:
 * This case should have enough holes for cooling.  
 * This case should have appealing design 
 
+<p align="center">
+  <img width="550" height="350" src="https://user-images.githubusercontent.com/46483800/55817336-376a3600-5aec-11e9-937a-18403e048f51.JPG">
+</p>
+
 ## Raspberry-Pi CASE - Bottom 
