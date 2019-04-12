@@ -89,17 +89,17 @@ Please try the latest release build before reporting, be sure to also include an
 Ahmed Elmogamer 
 * Main role: Software Engineer 
 * Specific tasks 
-  : Coding and sensors' driver.  
+  : Coding the main program and making sensors' driver.  
 
 Daewon Jung  
 * Main role: Mechanical Engineer 
 * Specific tasks 
-  : Designing cases and Promotion. 
+  : Designing cases, Assistant to make PCB and Promotion. 
   
 Gabriel Galeote Checa 
 * Main role: Electrical Engineer 
 * Specific tasks 
-  : Designing PCB, Website architature development.
+  : Designing PCB and Website architecture development.
   
   ### SNS 
 [<img src="https://user-images.githubusercontent.com/46483800/56038160-29552900-5d29-11e9-81a1-04e26ac6b5c5.jpg" width="50">](https://www.youtube.com/channel/UC1Y8QuR_0B8nRpyRaub2-ag)
