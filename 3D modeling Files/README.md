@@ -1,5 +1,5 @@
 ## 3D modeling cases for Strerss Controller 
-To consider about the product's usability, PCB and Raspberry Pi cases are desinged by 'Solid Works'.  
+To consider about the product's usability, PCB and Raspberry Pi cases are desinged by 'Solid Works', and rendered by 'KeyShot8'.  
 
 ## PCB_CASE
 Depend on the user's preference, 'Watch type' or 'Finger type' case can be chosen for Sensor PCB. 
