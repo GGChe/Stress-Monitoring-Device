@@ -13,9 +13,9 @@ Our tream provides an open-source real time embedded project based on the develo
 * [Introduction](#introduction)
 * [Required Components](#required-components)
 * [System Manual](#system-manual)
-* [SNS](#sns)
 * [Found a Bug](#found-a-bug)
 * [Contributing](#contributing)
+* [SNS](#sns)
 * [License](#license)
 
 
@@ -78,11 +78,6 @@ To deploy and starts working with this device, we need to follow some steps.
 
 
 
-### SNS 
-[<img src="https://user-images.githubusercontent.com/46483800/56038160-29552900-5d29-11e9-81a1-04e26ac6b5c5.jpg" width="50">](https://www.youtube.com/channel/UC1Y8QuR_0B8nRpyRaub2-ag)
-[<img src="https://user-images.githubusercontent.com/46483800/56040715-eb5b0380-5d2e-11e9-84c1-765cc2f00ddd.jpg" width="50">](https://www.instagram.com/free_stress_gaming/)
-
-
 ### Found a bug?
 
 Bugs can be reported at: https://github.com/GGChe/Stress_Controller_Device/issues
@@ -105,6 +100,11 @@ Gabriel Galeote Checa
 * Main role: Electrical Engineer 
 * Specific tasks 
   : Designing PCB, Website architature development.
+  
+  ### SNS 
+[<img src="https://user-images.githubusercontent.com/46483800/56038160-29552900-5d29-11e9-81a1-04e26ac6b5c5.jpg" width="50">](https://www.youtube.com/channel/UC1Y8QuR_0B8nRpyRaub2-ag)
+[<img src="https://user-images.githubusercontent.com/46483800/56040715-eb5b0380-5d2e-11e9-84c1-765cc2f00ddd.jpg" width="50">](https://www.instagram.com/free_stress_gaming/)
+
 
 ### License
 
