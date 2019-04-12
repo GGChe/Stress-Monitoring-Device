@@ -94,12 +94,20 @@ Please try the latest release build before reporting, be sure to also include an
 
 ### Contributing
 
-Ahmed Elmogamer
+Ahmed Elmogamer 
+* Main role: Software Engineer 
+* Specific tasks 
+  : Coding and sensors' driver.  
 
-Daewon Jung
-
-Gabriel Galeote Checa
-
+Daewon Jung : Mechanical Engineer 
+* Main role: Mechanical Engineer 
+* Specific tasks 
+  : Designing cases and Promotion. 
+  
+Gabriel Galeote Checa : Electrical Engineer
+* Main role: Electrical Engineer 
+* Specific tasks 
+  : Designing PCB, Website architature development.
 
 ### License
 
