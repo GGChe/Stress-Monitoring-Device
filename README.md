@@ -37,7 +37,7 @@ The device consists of the next components:
   * 2 X 2Kohm SMD resistors
 - Wrist sensor:
   * VEML6030 Light sensor 
-  * LED
+  * 1 X IR LED
   * 1 X 1 Kohm SMD resistor 
   * 1 X 10 Kohm SMD resistor
   * 1 X 1000 nF SMD capasitor 
