@@ -77,12 +77,7 @@ To deploy and starts working with this device, we need to follow some steps.
 
 
 
-#### 2. Make a Profile 
-<p align="center">
-  <img width="550" height="350" src="https://user-images.githubusercontent.com/46483800/55652907-cb828780-57e4-11e9-9571-8c4e7ec287e8.JPG">
-</p>
-
-#### 3. Use Case 
+#### 2. Use Case 
 
 
 
@@ -99,6 +94,11 @@ Please try the latest release build before reporting, be sure to also include an
 
 ### Contributing
 
+Ahmed Elmogamer
+
+Daewon Jung
+
+Gabriel Galeote Checa
 
 
 ### License
