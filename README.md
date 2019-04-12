@@ -4,7 +4,7 @@
 [![Open Source Helpers](https://www.codetriage.com/ggche/stress_controller_device/badges/users.svg)](https://www.codetriage.com/ggche/stress_controller_device)
 
 [<img src="https://user-images.githubusercontent.com/46483800/56038160-29552900-5d29-11e9-81a1-04e26ac6b5c5.jpg" width="50">](https://www.youtube.com/channel/UC1Y8QuR_0B8nRpyRaub2-ag)
-[<img src="https://user-images.githubusercontent.com/46483800/56040584-9cad6980-5d2e-11e9-8565-f151d926c698.png" width="50">](https://www.instagram.com/free_stress_gaming/)
+[<img src="https://user-images.githubusercontent.com/46483800/56040715-eb5b0380-5d2e-11e9-84c1-765cc2f00ddd.jpg" width="50">](https://www.instagram.com/free_stress_gaming/)
 ## Welcome to FreeStressGame's open source Project!
 
 Our tream provides an open-source real time embedded project based on the development of a real time biomedical device which aim is to monitor the stress level of a videogame player. This project is open source and anyone is invited to contribute freely sharing all your tips and modifications
