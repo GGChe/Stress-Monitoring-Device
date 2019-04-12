@@ -99,12 +99,12 @@ Ahmed Elmogamer
 * Specific tasks 
   : Coding and sensors' driver.  
 
-Daewon Jung : Mechanical Engineer 
+Daewon Jung  
 * Main role: Mechanical Engineer 
 * Specific tasks 
   : Designing cases and Promotion. 
   
-Gabriel Galeote Checa : Electrical Engineer
+Gabriel Galeote Checa 
 * Main role: Electrical Engineer 
 * Specific tasks 
   : Designing PCB, Website architature development.
