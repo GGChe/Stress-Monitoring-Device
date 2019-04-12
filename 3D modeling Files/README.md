@@ -2,7 +2,7 @@
 To consider about the product's usability, PCB and Raspberry Pi cases are desinged by 'Solid Works'.  
 
 ## PCB_CASE
-Depend on the user's preference, 'Watch type' and 'Finger type' cases can be chosen. 
+Depend on the user's preference, 'Watch type' or 'Finger type' case can be chosen for Sensor PCB. 
 
 * Watch Type Case
 <p align="center">
