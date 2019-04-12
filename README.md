@@ -94,7 +94,7 @@ Ahmed Elmogamer
 Daewon Jung  
 * Main role: Mechanical Engineer 
 * Specific tasks 
-  : Designing cases, Assistant to make PCB and Promotion. 
+  : Designing cases, Assist making PCB and Promotion. 
   
 Gabriel Galeote Checa 
 * Main role: Electrical Engineer 
