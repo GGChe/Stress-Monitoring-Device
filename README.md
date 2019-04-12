@@ -48,7 +48,6 @@ The device consists of the next components:
 All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UPLOADED DOCUMENTS. 
 
 ### System Manual 
-#### 1. Installation
 
 To deploy and starts working with this device, we need to follow some steps. 
 
@@ -75,9 +74,6 @@ To deploy and starts working with this device, we need to follow some steps.
 
 #### [Software setting] 
 
-
-
-#### 2. Use Case 
 
 
 
