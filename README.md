@@ -43,7 +43,7 @@ The device consists of the next components:
   * 1 X 1000 nF SMD capasitor 
 - Piezo Buzzer
 - RJ45 Cable
-- Band type case for Wrist sensor
+- Finger / Band type case for Wrist sensor
 - Raspberry Pi case 
 
 All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UPLOADED DOCUMENTS. 
