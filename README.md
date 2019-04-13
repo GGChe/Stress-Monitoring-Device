@@ -17,7 +17,7 @@ Our tream provides an open-source real time embedded project based on the develo
 * [Found a Bug](#found-a-bug)
 * [Contributing](#contributing)
 * [SNS](#sns)
-
+* [License](#lisence)
 
 
 ### Introduction
@@ -122,6 +122,5 @@ Gabriel Galeote Checa
 [<img src="https://user-images.githubusercontent.com/46483800/56038160-29552900-5d29-11e9-81a1-04e26ac6b5c5.jpg" width="50">](https://www.youtube.com/channel/UC1Y8QuR_0B8nRpyRaub2-ag)
 [<img src="https://user-images.githubusercontent.com/46483800/56040715-eb5b0380-5d2e-11e9-84c1-765cc2f00ddd.jpg" width="50">](https://www.instagram.com/free_stress_gaming/)
 
-
-
+### License
 
