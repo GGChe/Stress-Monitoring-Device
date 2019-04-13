@@ -11,6 +11,7 @@ Our tream provides an open-source real time embedded project based on the develo
 ## Table of Contents
 
 * [Introduction](#introduction)
+* [Methodology](#methodology)
 * [Required Components](#required-components)
 * [System Manual](#system-manual)
 * [Found a Bug](#found-a-bug)
@@ -29,6 +30,11 @@ There is evidence available that supports the fact that the stress is one of the
 With the mentioned before, we can imagine that one of the most risky situations for a child are videogames where we set an unprepared person against a stressfull and addictive situation, causing severe damage on the child. 
 
 Then, this project constitutes a reliable and attractive solution for parents, therapists and adults that want to monitor and control the stress status of the player.
+
+### Methodology
+#### [HeartBeat Detection]
+
+#### [Stress Recognition] 
 
 ### Required Components 
 The device consists of the next components:
