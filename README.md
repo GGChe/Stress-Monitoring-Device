@@ -16,6 +16,7 @@ Our tream provides an open-source real time embedded project based on the develo
 * [System Manual](#system-manual)
 * [Found a Bug](#found-a-bug)
 * [Contributing](#contributing)
+* [Pubilcation](#publication)
 * [SNS](#sns)
 * [License](#lisence)
 
@@ -111,14 +112,17 @@ Ahmed Elmogamer
 Daewon Jung  
 * Main role: Mechanical Engineer 
 * Specific tasks 
-  : Designing cases, Assist making PCB and Promotion. 
+  : Designing cases, assist making PCB and Promotion. 
   
 Gabriel Galeote Checa 
 * Main role: Electrical Engineer 
 * Specific tasks 
   : Designing PCB and Website architecture development.
   
-  ### SNS 
+### Publication
+[<img src="https://user-images.githubusercontent.com/46483800/56085357-98ba3e00-5e39-11e9-9d22-95d3b9b24ce1.png" width="130">](https://hackaday.io/project/164972-free-stress-gaming)
+
+### SNS 
 [<img src="https://user-images.githubusercontent.com/46483800/56038160-29552900-5d29-11e9-81a1-04e26ac6b5c5.jpg" width="50">](https://www.youtube.com/channel/UC1Y8QuR_0B8nRpyRaub2-ag)
 [<img src="https://user-images.githubusercontent.com/46483800/56040715-eb5b0380-5d2e-11e9-84c1-765cc2f00ddd.jpg" width="50">](https://www.instagram.com/free_stress_gaming/)
 
