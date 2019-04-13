@@ -33,8 +33,19 @@ Then, this project constitutes a reliable and attractive solution for parents, t
 
 ### Methodology
 #### [HeartBeat Detection]
+The heartbeat measurement technology that we chose for this project is the photopletismography. 
+This technique is based on the use of a photodiodethat emits a light pulse in a specific wavelength which, after passing by the blood vessel,the wavelength signal captured by the photosensor changes.  
+
+![OUTLINE](https://user-images.githubusercontent.com/46483800/56081586-d5207680-5e06-11e9-939d-f019cedb7b10.png)<img width="3" height="3"></img>
+
+According to that change, we can determine whether a pulse of blood has passed in a specific time, depending on our sampling rate.  
+
 
 #### [Stress Recognition] 
+Once the signal is taken, it is carried to the raspberry Pi using a proper wire-basedconnection to avoid any unwanted interaction with other signals and for a better perfor-mance of the device.  
+Then, the Raspberry PI will process the data in real time and, at the same time, it will do a basic threshold based control for deciding whether the person is under stress or not. When this process recognize the stress, it makes beep sound for warning. 
+
+![OUTLINE](https://user-images.githubusercontent.com/46483800/56081790-2598d380-5e09-11e9-9c6f-65cac1a773d4.PNG)<img width="3" height="3"></img>
 
 ### Required Components 
 The device consists of the next components:
