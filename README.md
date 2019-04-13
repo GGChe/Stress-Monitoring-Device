@@ -34,7 +34,7 @@ Then, this project constitutes a reliable and attractive solution for parents, t
 ### Methodology
 #### [HeartBeat Detection]
 The heartbeat measurement technology that we chose for this project is the photopletismography. 
-This technique is based on the use of a photodiodethat emits a light pulse in a specific wavelength which, after passing by the blood vessel,the wavelength signal captured by the photosensor changes.  
+This technique is based on the use of a photodiodethat emits a light pulse in a specific wavelength which, after passing by the blood vessel, the wavelength signal captured by the photosensor changes.  
 
 ![OUTLINE](https://user-images.githubusercontent.com/46483800/56081586-d5207680-5e06-11e9-939d-f019cedb7b10.png)<img width="3" height="3"></img>
 
