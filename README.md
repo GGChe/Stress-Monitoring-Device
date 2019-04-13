@@ -17,7 +17,7 @@ Our tream provides an open-source real time embedded project based on the develo
 * [Found a Bug](#found-a-bug)
 * [Contributing](#contributing)
 * [SNS](#sns)
-* [License](#license)
+
 
 
 ### Introduction
@@ -42,7 +42,7 @@ According to that change, we can determine whether a pulse of blood has passed i
 
 
 #### [Stress Recognition] 
-Once the signal is taken, it is carried to the raspberry Pi using a proper wire-basedconnection to avoid any unwanted interaction with other signals and for a better perfor-mance of the device.  
+Once the signal is taken, it is carried to the raspberry Pi using a proper wirebased connection to avoid any unwanted interaction with other signals and for a better performance of the device.  
 Then, the Raspberry PI will process the data in real time and, at the same time, it will do a basic threshold based control for deciding whether the person is under stress or not. When this process recognize the stress, it makes beep sound for warning. 
 
 ![OUTLINE](https://user-images.githubusercontent.com/46483800/56081790-2598d380-5e09-11e9-9c6f-65cac1a773d4.PNG)<img width="3" height="3"></img>
@@ -123,6 +123,5 @@ Gabriel Galeote Checa
 [<img src="https://user-images.githubusercontent.com/46483800/56040715-eb5b0380-5d2e-11e9-84c1-765cc2f00ddd.jpg" width="50">](https://www.instagram.com/free_stress_gaming/)
 
 
-### License
 
 
