@@ -71,7 +71,7 @@ All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UP
 #### Hardware section 
 In this section you will find useful information of how to replicate our project. Given the components listed before, you need to print the pcb, which files and more deep information is shown in the PCB folder.  
 
-![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
+![OUTLINE](https://user-images.githubusercontent.com/46483800/56098901-de403f00-5efd-11e9-93b5-40b94c091432.JPG)<img width="3" height="3"></img>
 ![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
 * Connect PCB adaptor with Wrist sensor by RJ45 cable
 * Connect PCB adaptor pins with Raspberry Pi pins as shown in below table 
