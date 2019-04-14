@@ -88,7 +88,7 @@ To deploy and starts working with this device, we need to follow some steps.
 
 |Piezo Buzzer | Raspberry Pi| 
 ------------|-------------
-| Positive (+) |     11 (GPIO 17)|
+| Positive (+) |     7 (GPIO 4)|
 | Negative (-) |     14 (GND) |
 
 #### [Software setting] 
