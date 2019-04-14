@@ -85,13 +85,8 @@ In this section you will find useful information of how to replicate our project
 </p>
 
 #### Software section
-##### [Driver] 
-We developed a driver for the VEML6030 sensor, that uses I2C communication protocol, using the data obtained from the link below. The driver given in that project was initially prepared for Arduino but we had to modify it completely to make it run in every system using a proper c++ code.
 
-[Mbed VEML6030 Driver](https://os.mbed.com/teams/MSS/code/VEML6030/)
-
-
-##### [Software setting] 
+##### Software setting 
 To build our program in your Pi, you need to follow some steps.  
 
 ```
@@ -110,6 +105,11 @@ sudo apt-get install g++
 ```
 If you have any problem installing php5.6 in Raspbian, cause it is not very well supported, follow this guide:
 https://unnikked.ga/how-to-install-php-5-6-on-a-raspberry-pi-2-5fd93879cb14
+
+##### Driver 
+We developed a driver for the VEML6030 sensor, that uses I2C communication protocol, using the data obtained from the link below. The driver given in that project was initially prepared for Arduino but we had to modify it completely to make it run in every system using a proper c++ code.
+
+[Mbed VEML6030 Driver](https://os.mbed.com/teams/MSS/code/VEML6030/)
 
 ### Found a bug?
 
