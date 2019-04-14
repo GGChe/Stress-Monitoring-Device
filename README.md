@@ -86,11 +86,10 @@ In this section you will find useful information of how to replicate our project
 
 #### Software section
 ##### [Driver] 
-Based on the arduino mbed veml6030 driver, we are building our own code for communicating between 'VEML6030' light sensor with 'Raspberry Pi'. 
-
-Check the below link for getting more information. 
+We developed a driver for the VEML6030 sensor, that uses I2C communication protocol, using the data obtained from the link below. The driver given in that project was initially prepared for Arduino but we had to modify it completely to make it run in every system using a proper c++ code.
 
 [Mbed VEML6030 Driver](https://os.mbed.com/teams/MSS/code/VEML6030/)
+
 
 ##### [Software setting] 
 To build our program in your Pi, you need to follow some steps.  
