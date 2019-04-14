@@ -75,21 +75,12 @@ In this section you will find useful information of how to replicate our project
 ![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
 * Connect PCB adaptor with Wrist sensor by RJ45 cable
 * Connect PCB adaptor pins with Raspberry Pi pins as shown in below table 
-
-|PCB adaptor | Raspberry Pi| 
-------------|-------------
-|    1      |     1 (3.3V)|
-|    3      |     3 (SDA) |
-|    5      |     5 (SCL) |
-|    39     |     39 (GND)|
-
+<p align="center">
+![table1](https://user-images.githubusercontent.com/16301652/56097786-d332e200-5ef0-11e9-94b8-7715ed1de8a4.PNG)
 * Connect Piezo Buzzer pins with Raspberry Pi pins as shown in below table 
 
-|Piezo Buzzer | Raspberry Pi| 
-------------|-------------
-| Positive (+) |     7 (GPIO 4)|
-| Negative (-) |     14 (GND) |
-
+![table2](https://user-images.githubusercontent.com/16301652/56097791-dcbc4a00-5ef0-11e9-86bb-00c68b79a9ae.PNG)
+</p>
 #### Software section
 ##### [Driver] 
 Based on the arduino mbed veml6030 driver, we are building our own code for communicating between 'VEML6030' light sensor with 'Raspberry Pi'. 
