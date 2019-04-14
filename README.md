@@ -95,7 +95,7 @@ To deploy and starts working with this device, you need to follow some steps.
 To build our program in your Pi, you need to follow some steps. 
 
 ```
-git clone https://github.com/GGChe/Stress_Controller_Device.git
+git clone https://github.com/GGChe/Stress_Controller_Device
 ```
 
 ```
