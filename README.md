@@ -68,7 +68,7 @@ All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UP
 
 ### System Manual 
 
-To deploy and starts working with this device, we need to follow some steps. 
+To deploy and starts working with this device, you need to follow some steps. 
 
 #### [Hardware setting] 
 
@@ -92,9 +92,15 @@ To deploy and starts working with this device, we need to follow some steps.
 | Negative (-) |     14 (GND) |
 
 #### [Software setting] 
+To build our program in your Pi, you need to follow some steps. 
 
+```
 git clone https://github.com/GGChe/Stress_Controller_Device.git
+```
 
+```
+sudo 
+```
 
 ### Found a bug?
 
