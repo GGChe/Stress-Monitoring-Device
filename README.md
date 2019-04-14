@@ -101,15 +101,24 @@ Check the below link for getting more information.
 [Mbed VEML6030 Driver](https://os.mbed.com/teams/MSS/code/VEML6030/)
 
 ##### [Software setting] 
-To build our program in your Pi, you need to follow some steps. 
+To build our program in your Pi, you need to follow some steps.  
 
 ```
+sudo apt-get update
+
 git clone https://github.com/GGChe/Stress_Controller_Device
 ```
+You would need to update and install the libraries of PHP5.6, Apache2 and compilers if your are working on a vanilla version of the OS.
 
 ```
-sudo 
+sudo apt-get install php5.6
+
+sudo apt-get install apache2
+
+sudo apt-get install g++
 ```
+If you have any problem installing php5.6 in Raspbian, cause it is not very well supported, follow this guide:
+https://unnikked.ga/how-to-install-php-5-6-on-a-raspberry-pi-2-5fd93879cb14
 
 ### Found a bug?
 
