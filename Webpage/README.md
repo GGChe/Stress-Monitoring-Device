@@ -1,5 +1,7 @@
 # Website
 
+## How does the webpage works?
+
 We have developed a webpage architecture that is going to be the configuration interface between the user and the device. By login in the website and using the resources available in it the user is able to modify the parameters of their profile by the proposed calibration. 
 
 The webpage main feature is to initialise the device and all the configuration needed for that as well as identify the user too have more than one user on the same device. Thus, if we load one user, we will be using that user all the time until we connect the device to internet and we change the user to other one.
@@ -17,10 +19,19 @@ create an "user.txt" where it will set the user that is already registered.
 
 - In the Session webpage, we can manually run the sensor by using the button provided.
 
-
 That is everything! There you have a demo video of how to use the webpage architecture created!
 
-LINK
+LINK TO THE VIDEO
 
+## How to install the webpage files
 
+First, check that you have the correct packages for running php and apache server. For that, run the next commands on the terminal:
 
+----
+sudo apt-get update
+
+sudo apt-get install apache 2
+----
+If you are using raspbian, you need to find the right package for php5.6 that is not really supported in Raspbian. Follow the next webpage steps to install it properly:
+
+-https://unnikked.ga/how-to-install-php-5-6-on-a-raspberry-pi-2-5fd93879cb1
