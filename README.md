@@ -70,8 +70,8 @@ All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UP
 
 To deploy and starts working with this device, you need to follow some steps. 
 
-#### [Hardware setting] 
-
+#### Hardware section 
+##### [Hardware setting] 
 ![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
 ![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
 * Connect PCB adaptor with Wrist sensor by RJ45 cable
@@ -91,7 +91,15 @@ To deploy and starts working with this device, you need to follow some steps.
 | Positive (+) |     7 (GPIO 4)|
 | Negative (-) |     14 (GND) |
 
-#### [Software setting] 
+#### Software section
+##### [Driver] 
+Based on the arduino mbed veml6030 driver, we are building our own code for communicating between 'VEML6030' light sensor with 'Raspberry Pi'. 
+
+Check the below link for getting more information. 
+
+[Mbed VEML6030 Driver](https://os.mbed.com/teams/MSS/code/VEML6030/)
+
+##### [Software setting] 
 To build our program in your Pi, you need to follow some steps. 
 
 ```
