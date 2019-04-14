@@ -143,3 +143,4 @@ Gabriel Galeote Checa
 
 ### License
 
+The MIT License
