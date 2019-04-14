@@ -27,11 +27,12 @@ LINK TO THE VIDEO
 
 First, check that you have the correct packages for running php and apache server. For that, run the next commands on the terminal:
 
-´´´
+
+```
 sudo apt-get update
 
 sudo apt-get install apache 2
-´´´
+```
 
 If you are using raspbian, you need to find the right package for php5.6 that is not really supported in Raspbian. Follow the next webpage steps to install it properly:
 
