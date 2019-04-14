@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-  
 <html>
    <head>
    <meta name="viewport" content="initial-scale=1">
@@ -24,21 +22,17 @@
        border-radius: 25px;
      }
      </style>
-
    </head>
    <body>
-
    <center>
-
    <div class = "content">
    <h1 style = "font-family:serif;font-size:30px;"> Profile </h1>
-
    <hr>
      <form method="post">
         ID:
         <?php
         echo $_COOKIE["user"];
-        setcookie("user", null, -1, '/'); // 86400 = 1 day
+        setcookie("user", null, -1, '/'); 
         ?>
      </form>
      <br>
@@ -51,7 +45,3 @@
 </script>
    </body>
    </html>
-  <?php
-
-   
- ?>

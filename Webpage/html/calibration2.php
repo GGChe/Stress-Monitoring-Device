@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-  
 <html>
    <head>
       <title>Session</title>
@@ -23,17 +21,12 @@
        border: solid 10px black;
        border-radius: 25px;
      }
-     
      </style>
-
    </head>
    <body>
-
    <center>
-
    <div class = "content">
    <h1 style = "font-family:serif;font-size:30px;"> Calibration of the device </h1>
-
    <hr>
      <form method="post">
      <h1>2nd Calibration</h1>
@@ -50,40 +43,37 @@
      <br>
      </div>
      </center>
-     <script>
-                
-</script>
    </body>
    </html>
   <?php
-if (isset($_POST['button'])) {
-  
+    /**
+     * 
+     */
+    if (isset($_POST['button'])) {  
       $myfile = fopen('/var/www/html/Project/config.txt', 'r');
       $number=fgets($myfile);
       fclose($myfile);
-      if ($number=="0") { //The device is off, then we turn it on.
+      if ($number=="0") { 
+
+        // Write a "2" that means that we go for the second calibration 
         $myfile = fopen('/var/www/html/Project/config.txt', 'w');
-        fwrite($myfile, "1");
+        fwrite($myfile, "2");
         fclose($myfile);
 
         echo "<script> swal('Please, wait one minute');</script>";
         ob_end_flush();
         flush();
-        sleep(3);
+        sleep(64);
         echo "<script> swal('Good job!', 'Second calibration done', 'success');
-        setTimeout(function () {
-          window.location.href = 'startsession.php';
-       }, 1000); //will call the function after 1 sec.
-        </script>";
-
+          setTimeout(function () {
+          window.location.href = 'login.php';
+          }, 1000); //will call the function after 1 sec.
+          </script>";
+        // Come back to "0" that means that we go for the second calibration 
         $myfile = fopen('/var/www/html/Project/config.txt', 'w');
         fwrite($myfile, "0");
         fclose($myfile);
-    } else { // In this case, we would have the device off or an invalid number.
-        
+      } 
     }
-}
 
-
-    
  ?>
