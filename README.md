@@ -93,7 +93,7 @@ To deploy and starts working with this device, we need to follow some steps.
 
 #### [Software setting] 
 
-
+git clone https://github.com/GGChe/Stress_Controller_Device.git
 
 
 ### Found a bug?
