@@ -4,7 +4,7 @@
 [![Open Source Helpers](https://www.codetriage.com/ggche/stress_controller_device/badges/users.svg)](https://www.codetriage.com/ggche/stress_controller_device)
 
 
-## Welcome to FreeStressGame's open source Project!
+# Welcome to FreeStressGame's open source Project!
 
 Our tream provides an open-source real time embedded project based on the development of a real time biomedical device which aim is to monitor the stress level of a videogame player. This project is open source and anyone is invited to contribute freely sharing all your tips and modifications
 
@@ -66,13 +66,11 @@ The device consists of the next components:
 
 All circuit schematics / PCB Eagle files/ 3D Solidworks files are included in UPLOADED DOCUMENTS. 
 
-### System Manual 
-
+### System Description 
 
 #### Hardware section 
-To deploy and starts working with this device, you need to follow some steps. 
+In this section you will find useful information of how to replicate our project. Given the components listed before, you need to print the pcb, which files and more deep information is shown in the PCB folder.  
 
-##### [Hardware setting] 
 ![OUTLINE](https://user-images.githubusercontent.com/46483800/55642991-ea275500-57c9-11e9-9a85-fb307a86195a.JPG)<img width="3" height="3"></img>
 ![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
 * Connect PCB adaptor with Wrist sensor by RJ45 cable
