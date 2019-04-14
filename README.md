@@ -77,13 +77,13 @@ In this section you will find useful information of how to replicate our project
 * Connect PCB adaptor pins with Raspberry Pi pins as shown in below table 
 
 <p align="center">
-![table1](https://user-images.githubusercontent.com/16301652/56097786-d332e200-5ef0-11e9-94b8-7715ed1de8a4.PNG)
-* Connect Piezo Buzzer pins with Raspberry Pi pins as shown in below table 
+<img width="550" height="350" src="https://user-images.githubusercontent.com/16301652/56097786-d332e200-5ef0-11e9-94b8-7715ed1de8a4.PNG")
+</p>
+ 
+<p align="center">
+<img width="550" height="350" src="https://user-images.githubusercontent.com/16301652/56097791-dcbc4a00-5ef0-11e9-86bb-00c68b79a9ae.PNG")
 </p>
 
-<p align="center">
-![table2](https://user-images.githubusercontent.com/16301652/56097791-dcbc4a00-5ef0-11e9-86bb-00c68b79a9ae.PNG)
-</p>
 #### Software section
 ##### [Driver] 
 Based on the arduino mbed veml6030 driver, we are building our own code for communicating between 'VEML6030' light sensor with 'Raspberry Pi'. 
