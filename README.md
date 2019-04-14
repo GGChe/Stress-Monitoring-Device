@@ -75,10 +75,13 @@ In this section you will find useful information of how to replicate our project
 ![pin outline](https://user-images.githubusercontent.com/46483800/55650311-3b8d0f80-57dd-11e9-888e-57d0e911ed39.JPG)
 * Connect PCB adaptor with Wrist sensor by RJ45 cable
 * Connect PCB adaptor pins with Raspberry Pi pins as shown in below table 
+
 <p align="center">
 ![table1](https://user-images.githubusercontent.com/16301652/56097786-d332e200-5ef0-11e9-94b8-7715ed1de8a4.PNG)
 * Connect Piezo Buzzer pins with Raspberry Pi pins as shown in below table 
+</p>
 
+<p align="center">
 ![table2](https://user-images.githubusercontent.com/16301652/56097791-dcbc4a00-5ef0-11e9-86bb-00c68b79a9ae.PNG)
 </p>
 #### Software section
