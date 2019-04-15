@@ -77,7 +77,7 @@ In this section you will find useful information of how to replicate our project
 * Connect PCB adaptor pins with Raspberry Pi pins as shown in below table 
 
 <p align="center">
-<img width="250" height="200" src="https://user-images.githubusercontent.com/16301652/56097786-d332e200-5ef0-11e9-94b8-7715ed1de8a4.PNG")
+<img width="250" height="150" src="https://user-images.githubusercontent.com/16301652/56097786-d332e200-5ef0-11e9-94b8-7715ed1de8a4.PNG")
 </p>
  
 <p align="center">
