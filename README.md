@@ -1,6 +1,4 @@
-<p align="center">
-<img width="250" height="150" src="https://user-images.githubusercontent.com/16301652/56168870-55480700-5fd4-11e9-889a-351873a2b6f2.png")
-</p>v
+![StressFree.org Banner](https://github.com/GGChe/Stress_Controller_Device/blob/master/User%20Manual%20%26%20Support%20Documents/Pictures/Banner.png)
 [![Github Quickguide](https://travis-ci.com/GGChe/Stress_Controller_Device.svg?branch=master)](https://travis-ci.org/GGChe/Stress_Controller_Device/)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/ggche/stress_controller_device/badges/users.svg)](https://www.codetriage.com/ggche/stress_controller_device)
