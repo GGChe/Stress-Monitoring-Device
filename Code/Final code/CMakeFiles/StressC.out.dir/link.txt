@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/StressC.out.dir/StressController.cpp.o CMakeFiles/StressC.out.dir/VEML6030rpi.cpp.o  -o StressC.out -rdynamic -lwiringPi -lrt /usr/local/lib/libiir_static.a -lfir_static 

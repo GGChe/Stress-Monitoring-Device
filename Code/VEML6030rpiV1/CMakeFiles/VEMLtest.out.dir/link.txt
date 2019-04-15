@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/VEMLtest.out.dir/demoVEML6030rpi.cpp.o CMakeFiles/VEMLtest.out.dir/VEML6030rpi.cpp.o  -o VEMLtest.out -rdynamic -lwiringPi -lrt /usr/local/lib/libiir_static.a 

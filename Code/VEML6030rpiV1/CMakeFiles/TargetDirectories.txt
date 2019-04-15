@@ -1,3 +1,0 @@
-/home/pi/Desktop/VEML6030rpiV1/CMakeFiles/rebuild_cache.dir
-/home/pi/Desktop/VEML6030rpiV1/CMakeFiles/edit_cache.dir
-/home/pi/Desktop/VEML6030rpiV1/CMakeFiles/VEMLtest.out.dir

@@ -1,3 +1,42 @@
+/**
+ *
+ * "Library to use VEML6030 light sensor with RPI"
+ * University of Glasgow
+ * Supervised by: Bernd Porr
+ * By Ahmed Elmogamer, Daewon Jung and Gabriel Galeote Checa
+ *
+ *
+ * Has been further developed from and inspired by:
+ *  for mbed microcontroller: https://os.mbed.com/teams/MSS/code/VEML6030/
+ *  for Arduino, Bobby Schulz @ Northern Widget LLC: https://github.com/NorthernWidget/VEML6030
+ *
+ *
+ * Official project location:
+ * https://github.com/GGChe/Stress_Controller_Device
+ *
+ * Open Readme for details about the project
+ *
+ * -----------------------------------------------------------------
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ **/
+
 #include "VEML6030rpi.h"
 #include <wiringPiI2C.h>
 #include <fstream>
@@ -271,7 +310,6 @@ void VEML6030rpi::readVEML(uint8_t addr, uint8_t* dByteR, int len){//Reads from 
 void VEML6030rpi::writeVEML(uint8_t* dByteW, int len){//Writes to device
     //write byte
     uint16_t dword = (dByteW[2] << 8) | dByteW[1] ;
-    cout<<"W       "<<(int)dByteW[0]<<"           "<<(int)dword<<endl;
     //Error Checking and Writing
     if(wiringPiI2CWriteReg16(I2CRW, dByteW[0], dword)<0)
     {cout<<"error writing"<<endl;}
