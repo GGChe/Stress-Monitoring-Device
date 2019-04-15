@@ -81,7 +81,7 @@ In this section you will find useful information of how to replicate our project
 </p>
  
 <p align="center">
-<img width="2500" height="150" src="https://user-images.githubusercontent.com/16301652/56097791-dcbc4a00-5ef0-11e9-86bb-00c68b79a9ae.PNG")
+<img width="250" height="150" src="https://user-images.githubusercontent.com/16301652/56097791-dcbc4a00-5ef0-11e9-86bb-00c68b79a9ae.PNG")
 </p>
 
 #### Software section
