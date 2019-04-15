@@ -1,0 +1,48 @@
+An explanation of the text files:
+
+status.txt:
+
+0 - if the user is on the log in page
+1 - if the user enters the Session page
+2 - if the user enters the Sign up
+
+username.txt:
+
+Ahmed - has the current username being used whether when logged in or during configuration
+
+userdata.txt:
+
+Ahmed/23/43/13
+Gabri/34/53/23
+Daewon/43/54/54
+
+Has a list of all the users and their rest, run and stress. 
+These values have to be of 2 digits.
+
+exit.txt:
+
+0 - stay in current page
+1 - return to main menu
+
+session.txt:
+
+After the user logs in
+
+0 - do not read the sensor
+1 - read the sensor and detect stress
+
+config.txt:
+
+During configuration
+
+0 - do not read and wait for user's confirmation
+1 - read and calculate required average "rest or run"
+
+white.txt:
+
+used by RPI to output the detected white signals
+
+eventlog.txt:
+
+Writes the log of all the stress events recorded.
+
