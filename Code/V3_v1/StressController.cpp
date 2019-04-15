@@ -1,0 +1,374 @@
+/**
+ *
+ * "Monitoring of stress level"
+ * University of Glasgow
+ * Supervised by: Bernd Porr
+ * By Ahmed Elmogamer, Daewon Jung and Gabriel Galeote Checa
+ *
+ * Official project location:
+ * https://github.com/GGChe/Stress_Controller_Device
+ *
+ * Open Readme for details about the project
+ *
+ * -----------------------------------------------------------------
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ **/
+
+#include "VEML6030rpi.h"
+#include <wiringPiI2C.h>
+#include "Fir1.h"
+#include "CppTimer.h"
+#include <fstream>
+#include <array>
+#include <time.h>
+#include <string>
+#include <unistd.h>
+#include <bits/stdc++.h>
+#include <iostream>
+#include <stdio.h>
+#include <errno.h>
+#include <wiringPi.h>
+#include <softTone.h>
+
+//////// INITIALIZATION OF VARIABLES
+
+#define PIN 7 // GPIO for the buzzer
+
+double ctr = 0;
+int tbpm, pbpm;
+int stat = 0;
+int ipulse = 0;
+double pulse[300] = {0};
+double mpulse = 0;
+int statpulse = 0;
+int pd = 0;
+int tempbpm = 80;
+VEML6030rpi veml6030;
+int iuserrest, iuserrun, iuserstress, isession, iconfig, beg, runctr, restctr, runT, restT, configstat;
+string status, username, myexit, session, config;
+int sessionbpm[10] = 80;
+Fir1 fir("coeffnoise.dat", 801);
+bool userfound = false;
+int play = 0;
+
+//new profile or existing profile
+ifstream statustxt;
+string statusfname = "/var/www/html/Project/status.txt";
+//current user in use
+ifstream usernametxt;
+string usernamefname = "/var/www/html/Project/username.txt";
+//Data of every user
+fstream userstxt;
+string usersfname = "/var/www/html/Project/users.txt";
+//exit to main menu
+ifstream exittxt;
+string exitfname = "/var/www/html/Project/exit.txt";
+//session of checking for stress
+ifstream sessiontxt;
+string sessionfname = "/var/www/html/Project/session.txt";
+//configuration process
+ifstream configtxt;
+string configfname = "/var/www/html/Project/config.txt";
+//output of sensor
+//Maybe Remove
+ofstream whitetxt;
+string whitefname = "/var/www/html/Project/white.txt";
+//log of events
+ofstream eventlogtxt;
+string eventlogfname = "/var/www/html/Project/eventlog.txt";
+
+/**
+ * alarm Function
+ * This code is used for the alarm. To avoid the repetition of the same beep without stop, we include a
+ * counter inside of the function to limit the beeping.
+ *
+ **/
+
+void alarm(){
+  	int i=1;
+	wiringPiSetup ();
+	softToneCreate (PIN);
+			softToneWrite (PIN, 700);
+			delay(200);
+			softToneWrite (PIN, 0);
+				/*
+	while (i<1000){
+		if(i%500==0){
+			softToneWrite (PIN, 700);
+			softToneWrite (PIN, 0);
+		}
+		i++;
+	}
+	* */
+  }
+
+class ObtainData : public CppTimer {
+  void timerEvent() {
+    if(beg == 0){
+      beg++;
+      sleep(3);}
+    //add code to test for stress
+    veml6030.white = veml6030.getWhite();
+
+    if((session == "1") || (config == "1") || (config == "2")){
+      //filter input
+    double iw = fir.filter((double)veml6030.white) * 10000;
+
+
+      if(ipulse > 280){
+      ctr = 0;
+      ipulse = 0;
+    }
+
+      if(iw >0){
+      pulse[ipulse] = iw;     //assign detected peak to an array
+      ipulse++;               //increase the counter of the detected peak array
+      statpulse = 1;          //state in which we have detected a pulse
+      ctr++;
+    }
+
+      if(iw < 0){
+      ipulse = 0;
+      if (statpulse == 1){
+        mpulse = *max_element(pulse, pulse + 299) ;       //since pulse detection has detected a zero, we can now assign the maximum value of the array to a value
+        statpulse = 0;          //reset stat value
+        if(pd == 1){
+          //second pulse detected
+          //calculate BPM
+          tbpm = 60.0*(200.0/ctr);
+
+          if(tbpm >= 50 && tbpm <= 170){
+            pbpm = tbpm;
+          }
+
+          //reseting variables
+          mpulse = 0;
+          ctr = 0;
+        }
+      }
+      else
+      {
+        ctr++;    //increase the counter otherwise
+      }
+    }
+
+      if(mpulse > 50000){
+      ctr++; //incrementing pointer
+      pd = 1; //comparison pulse detected mode
+    }
+
+      if(ipulse > 280){
+        ctr = 0;
+        ipulse = 0;
+      }
+
+      if(iw >0){
+        pulse[ipulse] = iw;     //assign detected peak to an array
+        ipulse++;               //increase the counter of the detected peak array
+        statpulse = 1;          //state in which we have detected a pulse
+        ctr++;
+      }
+
+      if(iw < 0){
+        ipulse = 0;
+        if (statpulse == 1){
+          mpulse = *max_element(pulse, pulse + 299) ;       //since pulse detection has detected a zero, we can now assign the maximum value of the array to a value
+          statpulse = 0;          //reset stat value
+          if(pd == 1){
+            //second pulse detected
+            //calculate BPM
+            tbpm = 60.0*(200.0/ctr);
+
+            if(tbpm >= 50 && tbpm <= 170){
+              pbpm = tbpm;
+            }
+
+            //reseting variables
+            mpulse = 0;
+            ctr = 0;
+          }
+        }
+        else
+        {
+          ctr++;    //increase the counter otherwise
+        }
+      }
+
+      if(mpulse > 50000){
+        ctr++; //incrementing pointer
+        pd = 1; //comparison pulse detected mode
+      }
+
+    }
+
+    if(session == "1"){
+
+      //add the new bpm to the current bpm array
+      for(int i = 0; i < 9; i++){
+        sessionbpm[i] = sessionbpm[i + 1];
+      }
+      sessionbpm[9] = pbpm;
+      int tempstress = 0;
+
+      for(int j = 0; j < 9; j++){
+        //finds an sum of the difference between bpms
+        tempstress = abs(sessionbpm[j] - sessionbpm[j+1]) + tempstress;
+      }
+
+      tempstress = tempstress / 9;
+      time_t my_time = time(NULL);
+      if(tempstress <= iuserstress){
+        //record the username, stress average and date of the event
+	eventlogtxt << username << "-----" << tempstress << "-----" << ctime(&my_time) << endl;
+	eventlogtxt.close();
+      }
+    }
+    else if(config == "1"){
+      //calculate rest
+      restctr++; //increment rest counter Timer
+      restT = restT + abs(tempbpm - pbpm); //get the total of the bpms during rest configuration period
+      tempbpm = pbpm;
+    }
+    else if(config == "2"){
+      //calculate run
+      runctr++; //increment run counter Timer
+      runT = runT +  abs(tempbpm - pbpm); //get the total of the bpms during rest configuration period
+      tempbpm = pbpm;
+    }
+    else if(config == "0"){
+      configstat = 0;
+    }
+  }
+};
+
+
+
+int main(void){
+
+  // initialize buzer
+  wiringPiSetup ();
+  softToneCreate (PIN);
+
+  //Sensor
+  //initialize sensor
+  veml6030.init(0x48);
+  veml6030.powerSaving(0x0000);
+
+  //Filter
+  fir.reset ();
+  int taps;
+  taps = fir.getTaps();
+
+
+
+  //Timer
+  ObtainData Odata;
+  beg = 0;
+  Odata.start(5000000);
+
+  int cnt = 1;
+  //main function loop
+  while(1){
+    if(cnt>10000000){ // we stablish a counter to manage until when are we are going to read the file
+
+      // opening files
+      statustxt.open(statusfname.c_str());
+      usernametxt.open(usernamefname.c_str());
+      userstxt.open(usersfname.c_str());
+      exittxt.open(exitfname.c_str());
+      sessiontxt.open(sessionfname.c_str());
+      configtxt.open(configfname.c_str());
+      whitetxt.open(whitefname.c_str());
+      eventlogtxt.open(eventlogfname.c_str());
+
+      // extracting data from the files
+      statustxt >> status;
+      usernametxt>>username;
+      exittxt>>myexit;
+      sessiontxt>>session;
+      configtxt>>config;
+
+      //close all the files after reading.
+      statustxt.close();
+      usernametxt.close();
+      userstxt.close();
+      exittxt.close();
+      sessiontxt.close();
+      configtxt.close();
+      whitetxt.close();
+      eventlogtxt.close();
+
+      /** Firstly, we need to check whether status is 0, 1 or 2.
+       *  Then, if status is equals to 0, we are in the main webpage.
+       *  if status is equals to 1, we are logged but the user already exists to we don't need to calibrate
+       *  if status is equals to 2, we need to signup and calibrate. Another case must be considered for this condition.
+       **/
+
+
+
+      // Second Case
+      if(status == "1"){//Existing Profile
+
+	string content;
+	while (getline(userstxt, content))
+	  {
+	    if(content.find(username) != std::string::npos){
+	      userfound=true; // if we find the user, we write true on user found. Where/When to set it back to 0????
+	      int sizef = username.size();
+	      iuserrest = stoi(content.substr((sizef+1), 2));
+	      iuserrun = stoi(content.substr((sizef+4), 2));
+	      iuserstress = stoi(content.substr((sizef+7), 2));
+	      break;
+	    }
+	  }
+
+
+	//reset to main menu
+
+      }
+      if(status == "2"){//New Profile
+      restctr = 0;
+      runctr = 0;
+      runT = 0;
+      restT = 0;
+      configstat = 1;
+      while(configstat == 1){
+      }
+      iuserrest = restT / (restctr - 1);
+      iuserrun = runT / (runctr - 1);
+	  //calculate stress here
+    // stress average level is approximated to be half of the user's average of stress and run
+    iuserstress = (iuserrest + iuserrun)/4;
+	  //write to end of users.txt
+	  userstxt.open(usersfname.c_str());
+	  userstxt << username << "/" << iuserrest << "/" << iuserrun << "/" << iuserstress << endl;
+	  userstxt.close();
+
+
+      }
+
+
+      cnt=0;
+    }
+    else {
+      cnt++;
+    }
+  }
+}

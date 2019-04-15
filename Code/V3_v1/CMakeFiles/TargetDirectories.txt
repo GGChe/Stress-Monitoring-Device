@@ -1,0 +1,3 @@
+/home/pi/Desktop/V3_v1/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/V3_v1/CMakeFiles/edit_cache.dir
+/home/pi/Desktop/V3_v1/CMakeFiles/StressC.out.dir
