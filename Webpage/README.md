@@ -21,7 +21,9 @@ create an "user.txt" where it will set the user that is already registered.
 
 That is everything! There you have a demo video of how to use the webpage architecture created!
 
-LINK TO THE VIDEO
+
+[![](http://img.youtube.com/vi/9uvpTM_b6e0/0.jpg)](http://www.youtube.com/watch?v=9uvpTM_b6e0 "")
+
 
 ## How to install the webpage files
 
