@@ -111,6 +111,33 @@ We developed a driver for the VEML6030 sensor, that uses I2C communication proto
 
 [Mbed VEML6030 Driver](https://os.mbed.com/teams/MSS/code/VEML6030/)
 
+##### Compilation from source
+
+To compile the whole code, you only need to go to the code's folder and type on the terminal
+
+```
+cmake .
+
+make 
+
+sudo ./StressC.out
+```
+
+To run the program from the boot of the system
+
+```
+sudo nano /etc/rc.local
+
+```
+
+And then, write before "exit 0" the following scrypt:
+
+
+```
+sudo ./PATH/StressC.out
+
+```
+
 ### Found a bug?
 
 Bugs can be reported at: https://github.com/GGChe/Stress_Controller_Device/issues
