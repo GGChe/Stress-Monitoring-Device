@@ -1,0 +1,12 @@
+The coefficients used were produced by a python code that utilized:
+
+signal.firwin(801, [0.2, 10], pass_zero = 0, fs = 200)
+
+This produces coefficients with the following specifications:
+
+Taps: 801
+lower frequency: 0.2 Hz
+High frequency: 10 Hz
+type of filter: Band Pass
+Frequency: 200 Hz
+
