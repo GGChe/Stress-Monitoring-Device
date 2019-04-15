@@ -22,8 +22,7 @@ create an "user.txt" where it will set the user that is already registered.
 That is everything! There you have a demo video of how to use the webpage architecture created!
 
 
-[![](http://img.youtube.com/vi/9uvpTM_b6e0/0.jpg)](http://www.youtube.com/watch?v=9uvpTM_b6e0 "")
-
+[<img src="https://user-images.githubusercontent.com/46483800/56128570-f0f75a00-5f77-11e9-98cc-ce3b970bb8ab.jpg" width="800">](https://www.youtube.com/watch?v=9uvpTM_b6e0&t=1s)
 
 ## How to install the webpage files
 
