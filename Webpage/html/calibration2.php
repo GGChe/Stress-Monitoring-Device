@@ -31,10 +31,10 @@
      <form method="post">
      <h1>2nd Calibration</h1>
      <br>
-     The second calibration consists of one minute workout, try to do 20 push-ups or squats and then, wait for one minute after you press the button.
+     The second calibration will require you to do a 1 minute long workout. Try to do 20 push-ups or squats and then wait for one minute after you press the button.
      <br>
      <br>
-     Exercise for 1 minute, then press the button and we will record your hearth rate average. After 1 minute, your resting heart rate average will be storaged.
+     Exercise for 1 minute. Press the button and we will record your heart rate. After 1 minute, your heart rate average at after a workout will be stored.
      <br>
      <br>
 <input type="submit" name="button" value="Start"/>
@@ -60,11 +60,11 @@
         fwrite($myfile, "2");
         fclose($myfile);
 
-        echo "<script> swal('Please, wait one minute');</script>";
-        ob_end_flush();
-        flush();
-        sleep(64);
-        echo "<script> swal('Good job!', 'Second calibration done', 'success');
+        echo "<script> swal('Please, wait for one minute');</script>";
+            ob_flush();
+            flush();
+            sleep(40);
+        echo "<script> swal('Good job!', 'Second calibration is done', 'success');
           setTimeout(function () {
           window.location.href = 'login.php';
           }, 1000); //will call the function after 1 sec.

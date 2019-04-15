@@ -31,9 +31,9 @@
      <form method="post">
      <h1>1st Calibration</h1>
      <br>
-     The first calibration consists of a resting calibration.
+     The first calibration will record your heart rate at rest.
      <br>
-     Breathe deeply and relax yourself. Then press the button and we will record your hearth rate average. After 1 minute, your resting heart rate average will be storaged.
+     Breath and relax. Press the button and we will record your heart rate. After 1 minute, your heart rate average at rest will be stored. 
      <br>
 <input type="submit" name="button" value="Start"/>
      </form>
@@ -61,16 +61,18 @@
             $myfile = fopen('/var/www/html/Project/config.txt', 'w');
             fwrite($myfile, "1");
             fclose($myfile);
-            echo "<script> swal('Please, wait one minute');</script>";
-            ob_end_flush();
+            echo "<script> swal('Please, wait for one minute');</script>";
+            //wait(5000);
+            ob_flush();
             flush();
-            sleep(64);
+            sleep(40);
+            //wait(5000);
             // Come back to "0"
             $myfile = fopen('/var/www/html/Project/config.txt', 'w');
             fwrite($myfile, "0");
             fclose($myfile);
           
-            echo "<script> swal('Good job!', 'First calibration done', 'success');
+            echo "<script> swal('Good job!', 'First calibration is done', 'success');
                setTimeout(function () {
                window.location.href = 'calibration2.php'; //will redirect to your blog page (an ex: blog.html)
                 }, 1000); //will call the function after 2 secs.
@@ -83,14 +85,16 @@
         chmod("/var/www/html/Project/config.txt", 0777);
         umask($old);
         fclose($fp);
-        echo "<script> swal('Please, wait one minute');</script>";
-        ob_end_flush();
+        echo "<script> swal('Please, wait for one minute');</script>";
+        //wait(5000);
+        ob_flush();
         flush();
-        sleep(64);      
+            sleep(40);
+            //wait(5000);    
         $myfile = fopen('/var/www/html/Project/config.txt', 'w');
         fwrite($myfile, "0");
         fclose($myfile);
-        echo "<script> swal('Good job!', 'First calibration done', 'success');
+        echo "<script> swal('Good job!', 'First calibration is done', 'success');
             setTimeout(function () {
             window.location.href = 'calibration2.php'; //will redirect to your blog page (an ex: blog.html)
             }, 1000); //will call the function after 2 secs.

@@ -53,24 +53,34 @@
       if($name!=""){ // Check that the name is not empty
         fwrite($fp, $name."\n"); 
         setcookie("user", $name, time() + (86400), "/");
-
+        // Now, we check if the user already exists on the "users.txt" file.
+        $filecontent=file_get_contents('/var/www/html/Project/users.txt');
+        $pos=strpos($filecontent,$name);
+            if ($pos===false) {
+              
+              // Creates the file username with all the privileges activated
+              $fp2 = fopen('/var/www/html/Project/username.txt', 'w');
+              $old = umask(0);
+              file_put_contents("/var/www/html/Project/username.txt", $name);
+              chmod("/var/www/html/Project/username.txt", 0777);
+              umask($old);
+              fclose($fp2);
+                
+                // We modify the value of status to 1 cause we are loggin in now.
+              $fp2 = fopen('/var/www/html/Project/status.txt', 'w');
+              file_put_contents("/var/www/html/Project/status.txt", "1");
+              fclose($fp2);
+        
+              echo "<script> swal('User created', 'You will be redirected to the calibration ', 'success');</script>";
+              header("refresh:3; url=calibration.php"); //move to the status page
+            }else{
+               echo "<script> swal('ERROR!', 'The user already exists', 'error');</script>";
+               header("refresh:2; url=login.php"); // move to login page again to re-login again.
+        }
         /**
          * It is important to modify the privileges of the file in order to make it accesible to other codes.
          */
-        $fp2 = fopen('/var/www/html/Project/username.txt', 'w');
-        $old = umask(0);
-        file_put_contents("/var/www/html/Project/username.txt", $name);
-        chmod("/var/www/html/Project/username.txt", 0777);
-        umask($old);
-        
-        fclose($fp2);
-        $fp2 = fopen('/var/www/html/Project/status.txt', 'w');
-        file_put_contents("/var/www/html/Project/status.txt", "1");
-        fclose($fp2);
-        
-        echo "<script> swal('User created', 'You will be redirected to the calibration ', 'success');</script>";
-        header("refresh:3; url=calibration.php"); //move to the status page
-      }else{
+        }else{
       echo "<script> swal('ERROR!', 'Please, enter your new user', 'error');</script>";
       header("refresh:1; url=signup.php"); //move to the status page
       }
