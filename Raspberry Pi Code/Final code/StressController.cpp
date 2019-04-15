@@ -50,27 +50,45 @@
 //////// INITIALIZATION OF VARIABLES
 
 #define PIN 7 // GPIO for the buzzer
+int ipulse = 0; //index of detected length array
+int statpulse = 0; //indicates that we are in a state of a detected pulse
+int pd = 0; //indicates tha pulse is detected and ready for comparison to produce bpm
+int tempbpm = 80; //temporary bpm to compare with next detected bpm
+/* iuserrest: integer value of user rest
+ * iuserrun: integer value of user run
+ * iuserstress: integer value of user stress
+ * tbpm: temporary bpm use to check if the detected bpm is within 50 and 170
+ * pbpm: permanent bpm
+ */
+int iuserrest, iuserrun, iuserstress, tbpm, pbpm; 
+int configstep = 1; //which step of the configuration process
+int cnt = 1; //counter to regulate the main while loop
+int scale [14] = {659, 659, 0, 659, 0, 523, 659, 0, 784, 0, 0, 0, 392, 0}; //notes for buzzer
+int configstat = 1; //status if the calibration is done or not, 0 means done
 
-double ctr = 0;
-int tbpm, pbpm;
-int stat = 0;
-int ipulse = 0;
-double pulse[300] = {0};
-double mpulse = 0;
-int statpulse = 0;
-int pd = 0;
-int tempbpm = 80;
-VEML6030rpi veml6030;
-double  runctr, restctr, runT, restT;
-int iuserrest, iuserrun, iuserstress, isession, iconfig, beg, configstat;
-int configstep = 1;
-int configd = 0;
+double restctr = 0; //counter of how many bpms detected at rest
+double runctr = 0; //counter of how many bpms detected at run
+double runT = 0; //total of differences between bpms during run
+double restT = 0; //total of differences between bpms during rest
+double ctr = 0; //ctr to determine the difference between pulses
+double pulse[300] = {0}; //array to store all the values of the detected pulse
+double mpulse = 0; //maximum value in the pulse array
+/* duserrest: double of user rest
+ * duserrun: double of user run
+ * duserstress: double of user stress
+ */
+double duserrest, duserrun, duserstress;
+
+VEML6030rpi veml6030; //sensor constructor
+
+//string for status, current username used, to exit to main page or not, which session maning main, login or signup, to run the filter during configuration or not
 string status, username, myexit, session, config;
-int sessionbpm[10] = {80};
+//filling up the session bpm array with random values to make the average bpm difference between high
+int sessionbpm[20] = {0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000};
+//filter coefficients at 801 taps
 Fir1 fir("coeffnoise.dat", 801);
+//check if the username in use is found
 bool userfound = false;
-int play = 0;
-int cnt = 1;
 
 //new profile or existing profile
 ifstream statustxt;
@@ -98,17 +116,33 @@ string whitefname = "/var/www/html/Project/white.txt";
 ofstream eventlogtxt;
 string eventlogfname = "/var/www/html/Project/eventlog.txt";
 
-/**
- * alarm Function
- * This code is used for the alarm. To avoid the repetition of the same beep without stop, we include a
- * counter inside of the function to limit the beeping.
- *
- **/
-
-void init(){
-  // initialize buzer
+void startalarm(){//Mario theme song at the start of the rpi
+  int i;
   wiringPiSetup ();
   softToneCreate (PIN);
+  for (i = 0; i < 14; ++i)
+    {
+      softToneWrite (PIN, scale [i]);
+      delay(200);
+    }
+
+}
+
+void alarm(){//Alarm Function: Makes a single beep
+  int i=1;
+	wiringPiSetup ();
+	softToneCreate (PIN);
+  softToneWrite (PIN, 700);
+  delay(200);
+  softToneWrite (PIN, 0);
+  
+  }
+
+void init(){//initializers
+  // initialize buzzer
+  wiringPiSetup ();
+  softToneCreate (PIN);
+  startalarm();
 
   //Sensor
   //initialize sensor
@@ -117,33 +151,7 @@ void init(){
 
   //Filter
   fir.reset ();
-
-  configstat = 1;
-  restctr = 0;
-  runctr = 0;
-  runT = 0;
-  restT = 0;
-  configstep = 1;
-
 }
-
-void alarm(){
-  	int i=1;
-	wiringPiSetup ();
-	softToneCreate (PIN);
-			softToneWrite (PIN, 700);
-			delay(200);
-			softToneWrite (PIN, 0);
-				/*
-	while (i<1000){
-		if(i%500==0){
-			softToneWrite (PIN, 700);
-			softToneWrite (PIN, 0);
-		}
-		i++;
-	}
-	* */
-  }
 
 class ObtainData : public CppTimer {
   void timerEvent() {
@@ -152,96 +160,9 @@ class ObtainData : public CppTimer {
 
     if((session == "1") || (config == "1") || (config == "2")){
       //filter input
-    double iw = fir.filter((double)veml6030.white) * 10000;
+      double iw = fir.filter((double)veml6030.white) * 10000;
 
-
-      if(ipulse > 280){
-      ctr = 0;
-      ipulse = 0;
-    }
-
-      if(iw >0){
-      pulse[ipulse] = iw;     //assign detected peak to an array
-      ipulse++;               //increase the counter of the detected peak array
-      statpulse = 1;          //state in which we have detected a pulse
-      ctr++;
-    }
-
-      if(iw < 0){
-      ipulse = 0;
-      if (statpulse == 1){
-        mpulse = *max_element(pulse, pulse + 299) ;       //since pulse detection has detected a zero, we can now assign the maximum value of the array to a value
-        statpulse = 0;          //reset stat value
-        if(pd == 1){
-          //second pulse detected
-          //calculate BPM
-          tbpm = 60.0*(200.0/ctr);
-
-          if(tbpm >= 50 && tbpm <= 170){
-            pbpm = tbpm;
-                  cout << pbpm << endl;
-                  
-             if(session == "1"){
-      //add the new bpm to the current bpm array
-      for(int i = 0; i < 9; i++){
-        sessionbpm[i] = sessionbpm[i + 1];
-      }
-      sessionbpm[9] = pbpm;
-      int tempstress = 0;
-
-      for(int j = 0; j < 9; j++){
-        //finds an sum of the difference between bpms
-        tempstress = abs(sessionbpm[j] - sessionbpm[j+1]) + tempstress;
-      }
-
-      tempstress = tempstress / 9;
-      time_t my_time = time(NULL);
-      if(tempstress <= iuserstress){
-        //record the username, stress average and date of the event
-        alarm();
-	eventlogtxt << username << "-----" << tempstress << "-----" << ctime(&my_time) << endl;
-	eventlogtxt.close();
-      }
-    }
-    else if(configstep == 3){
-      configstep = 1;
-      configstat = 0;
-    }
-    else if((config == "1") && (configstep == 2)){
-      //calculate run
-            runctr++;
-      runT = runT +  abs(tempbpm - pbpm); //get the total of the bpms during rest configuration period
-      tempbpm = pbpm;
-      configstep = 3;
-    }
-    else if((config == "1") && (configstep == 1)){
-      restctr++;
-      //calculate rest
-      restT = restT + abs(tempbpm - pbpm); //get the total of the bpms during rest configuration period
-      tempbpm = pbpm;
-      configstep = 2;
-      runctr = 0;
-    }
-
-          }
-
-          //reseting variables
-          mpulse = 0;
-          ctr = 0;
-        }
-      }
-      else
-      {
-        ctr++;    //increase the counter otherwise
-      }
-    }
-
-      if(mpulse > 50000){
-      ctr++; //incrementing pointer
-      pd = 1; //comparison pulse detected mode
-    }
-
-      if(ipulse > 280){
+      if(ipulse > 280){ // to make sure the counter doesnt exceed pulse maximum array index
         ctr = 0;
         ipulse = 0;
       }
@@ -265,7 +186,50 @@ class ObtainData : public CppTimer {
 
             if(tbpm >= 50 && tbpm <= 170){
               pbpm = tbpm;
-              cout<<pbpm<<endl;
+
+              if(session == "1"){
+                //add the new bpm to the current bpm array
+                for(int i = 0; i < 19; i++){
+                  sessionbpm[i] = sessionbpm[i + 1];
+                }
+             
+                sessionbpm[19] = pbpm; //assign new bpm value
+                int tempstress = 0; 
+
+                for(int j = 0; j < 19; j++){
+                  //finds an sum of the difference between bpms
+                  tempstress = abs(sessionbpm[j] - sessionbpm[j+1]) + tempstress;
+                }
+
+                  tempstress = tempstress / 19;
+                  time_t my_time = time(NULL);
+                  if(tempstress <= iuserstress){
+                    //record the username, stress average and date of the event
+                    alarm();
+                    eventlogtxt.open(eventlogfname.c_str(), ios::app);
+                    eventlogtxt << username << "-----" << tempstress << "-----" << ctime(&my_time) << endl;
+                    eventlogtxt.close();
+                  }
+              }
+              else if(configstep == 3){
+                configstep = 1;
+                configstat = 0;
+              }
+              else if((config == "1") && (configstep == 2)){
+                runctr++;
+                //calculate run
+                runT = runT +  abs(tempbpm - pbpm); //get the total of the bpms during rest configuration period
+                tempbpm = pbpm;
+                configstep = 3;
+              }
+              else if((config == "1") && (configstep == 1)){
+                restctr++;
+                //calculate rest
+                restT = restT + abs(tempbpm - pbpm); //get the total of the bpms during rest configuration period
+                tempbpm = pbpm;
+                configstep = 2;
+              }
+
             }
 
             //reseting variables
@@ -273,24 +237,19 @@ class ObtainData : public CppTimer {
             ctr = 0;
           }
         }
-        else
-        {
+        else {
           ctr++;    //increase the counter otherwise
         }
       }
 
-      if(mpulse > 50000){
+      if(mpulse > 50000){ //compare the pulse
         ctr++; //incrementing pointer
         pd = 1; //comparison pulse detected mode
       }
 
     }
-
-   
   }
 };
-
-
 
 int main(void){
   //Timer
@@ -327,60 +286,60 @@ int main(void){
       /** Firstly, we need to check whether status is 0, 1 or 2.
        *  Then, if status is equals to 0, we are in the main webpage.
        *  if status is equals to 1, we are logged but the user already exists to we don't need to calibrate
-       *  if status is equals to 2, we need to signup and calibrate. Another case must be considered for this condition.
+       *  if status is equals to 2, we need to signup and calibrate. 
        **/
 
 
       if(status == "0"){
 
          if(configstat == 0){
-           //cout<<configstat<<endl;
-           cout<<restctr<<"  "<<runctr<<"  "<<runT<<"  "<<restT<<endl;
-            iuserrest = restT / (restctr - 1.0);
-            iuserrun = runT / (runctr - 1.0);
+            duserrest = restT / (restctr - 1.0);
+            duserrun = runT / (runctr - 1.0);
          	  //calculate stress here
-             // stress average level is approximated to be half of the user's average of stress and run
-             iuserstress = (iuserrest + iuserrun)/4;
+            // stress average level is approximated to be half of the user's average of stress and run
+            duserstress = (duserrest + duserrun)/4;
+            iuserrest = round(duserrest);
+            iuserrun = round(duserrun);
+            iuserstress = round(duserstress);
          	  //write to end of users.txt
-         	  userstxt.open(usersfname.c_str());
-             cout << username << "/" << iuserrest << "/" << iuserrun << "/" << iuserstress << endl;
+         	  userstxt.open(usersfname.c_str(), ios::app);
          	  userstxt << username << "/" << iuserrest << "/" << iuserrun << "/" << iuserstress << endl;
          	  userstxt.close();
-             configstat = 1;
-             restctr = 0;
-             runctr = 0;
-             runT = 0;
-             restT = 0;
+            //reseting values
+            configstat = 1;
+            restctr = 0;
+            runctr = 0;
+            runT = 0;
+            restT = 0;
          }
 
-
-       }
+      }
       // Second Case
       if(status == "1"){//Existing Profile
 
-	string content;
-	while (getline(userstxt, content))
-	  {
-	    if(content.find(username) != std::string::npos){
-	      userfound=true; 
-	      int sizef = username.size();
-	      iuserrest = stoi(content.substr((sizef+1), 2));
-	      iuserrun = stoi(content.substr((sizef+4), 2));
-	      iuserstress = stoi(content.substr((sizef+7), 2));
-	      break;
-	    }
-	  }
+        string content;
+        while (getline(userstxt, content))
+          {
+            if(content.find(username) != std::string::npos){
+              userfound=true; 
+              int sizef = username.size();
+              //retrieving user's data
+              iuserrest = stoi(content.substr((sizef+1), 2));
+              iuserrun = stoi(content.substr((sizef+4), 2));
+              iuserstress = stoi(content.substr((sizef+7), 2));
+              break;
+            }
+          }
 
 
 	//reset to main menu
 
       }
 
-
-      cnt=0;
-    }
-    else {
-      cnt++;
-    }
+        cnt=0;
+      }
+      else {
+        cnt++;
+      }
   }
 }
