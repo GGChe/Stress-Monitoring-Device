@@ -169,9 +169,14 @@ Check our publication in Hackaday.
 
 ### SNS 
 In our socialmedia you can find some demos and video explanations of how the system works. 
+
 [<img src="https://user-images.githubusercontent.com/46483800/56038160-29552900-5d29-11e9-81a1-04e26ac6b5c5.jpg" width="50">](https://www.youtube.com/channel/UC1Y8QuR_0B8nRpyRaub2-ag)
+
 [<img src="https://user-images.githubusercontent.com/46483800/56040715-eb5b0380-5d2e-11e9-84c1-765cc2f00ddd.jpg" width="50">](https://www.instagram.com/free_stress_gaming/)
 
+Check our two youtube videos explaining how the system works!
+- https://www.youtube.com/watch?v=JRjO4hhqV6E
+- https://www.youtube.com/watch?v=9uvpTM_b6e0&t=2s
 ### Credits
 
 This project used the current driver uploaded in mbed for other purposes, we fixed some errors for the VEML6030 use in RPI and we had to recode some sections of the driver.
