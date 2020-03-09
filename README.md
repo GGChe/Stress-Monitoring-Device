@@ -161,8 +161,7 @@ Daewon Jung
 Gabriel Galeote Checa 
 * Main role: Electronic Engineer 
 * Specific tasks 
-  : Designing PCB and Website architecture development.
-  : Fabrication and Soldering of the PCB. 
+  : Designing PCB and Website architecture development, Fabrication and Soldering of the PCB. 
   
 ### Publication
 Check our publication in Hackaday.
