@@ -159,9 +159,10 @@ Daewon Jung
   : Designing cases, assist making PCB and Promotion. 
   
 Gabriel Galeote Checa 
-* Main role: Electrical Engineer 
+* Main role: Electronic Engineer 
 * Specific tasks 
   : Designing PCB and Website architecture development.
+  : Fabrication and Soldering of the PCB. 
   
 ### Publication
 Check our publication in Hackaday.
